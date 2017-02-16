@@ -116,8 +116,7 @@ saveCityZipCode(city, zipCode);
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Evitar la construccion mental 
-### Avoid Mental Mapping
+### Evitar el mapeo mental 
 El Explicito es mejor que el implicito.
 
 **Mal hecho:**
