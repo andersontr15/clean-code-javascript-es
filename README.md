@@ -57,7 +57,7 @@ const yyyymmdstr = moment().format('YYYY/MM/DD');
 ```javascript
 const fechaActual = moment().format('YYYY/MM/DD');
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Utiliza el vocabulario igual para los variables del mismo tipo 
 
@@ -72,7 +72,7 @@ getCustomerRecord();
 ```javascript
 getUser();
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Utiliza nombres buscables 
 
@@ -91,13 +91,13 @@ setTimeout(blastOff, 86400000);
 
 **Bien hecho:**
 ```javascript
-// Declaralos como variables globales de 'const' y de maysucula. 
+// Declaralos como variables globales de 'const'.
 const MILLISECONDS_IN_A_DAY = 86400000;
 
 setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Utiliza variables explanatarios 
 **Mal hecho:**
@@ -114,7 +114,7 @@ const cityZipCodeRegex = /^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/;
 const [, city, zipCode] = address.match(cityZipCodeRegex) || [];
 saveCityZipCode(city, zipCode);
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Evitar el mapeo mental 
 El Explicito es mejor que el implicito.
@@ -145,7 +145,7 @@ locations.forEach((location) => {
   dispatch(location);
 });
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### No incluyas contexto unnecesario 
 Si tu clase / nombre tu objeto te dice algo, no lo repitas 
@@ -176,7 +176,7 @@ function paintCar(car) {
   car.color = 'Red';
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Utiliza argumentos defaultos en vez utilizar condicionales 
 Los argumentos defaults muchas veces son mas organizados que utilizar los condicionales.
@@ -200,7 +200,7 @@ function createMicrobrewery(breweryName = 'Hipster Brew Co.') {
 }
 
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ## **Funciones**
 ### Argumentos de funciones (2 o menos idealmente )
@@ -249,7 +249,7 @@ createMenu({
   cancellable: true
 });
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Las funciones deben existir para hacer una sola cosa 
 Esta regla por mucho es el mas importante en la ingenieria de software.
@@ -284,7 +284,7 @@ function isClientActive(client) {
   return clientRecord.isActive();
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Los nombres de las funciones deben explicar lo que hacen
 
@@ -308,7 +308,7 @@ function addMonthToDate(month, date) {
 const date = new Date();
 addMonthToDate(1, date);
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Las funciones deben tener solo un nivel de abstraccion 
 When you have more than one level of abstraction your function is usually
@@ -376,7 +376,7 @@ function parseBetterJSAlternative(code) {
   });
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Eliminar codigo duplicado 
 Do your absolute best to avoid duplicate code. Duplicate code is bad because it
@@ -456,7 +456,7 @@ function showEmployeeList(employees) {
   });
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Crear objectos defaults con Object.assign
 
@@ -501,7 +501,7 @@ function createMenu(config) {
 
 createMenu(menuConfig);
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### No utilices 'flags' como parametros de las funciones
 Flags tell your user that this function does more than one thing. Functions should do one thing. Split out your functions if they are following different code paths based on a boolean.
@@ -527,7 +527,7 @@ function createTempFile(name) {
   createFile(`./temp/${name}`);
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Evitar que las funciones produzcan efectos extras (parte 1)
 A function produces a side effect if it does anything other than take a value in
@@ -572,7 +572,7 @@ const newName = splitIntoFirstAndLastName(name);
 console.log(name); // 'Ryan McDermott';
 console.log(newName); // ['Ryan', 'McDermott'];
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Avoid Side Effects (part 2)
 In JavaScript, primitives are passed by value and objects/arrays are passed by
@@ -621,7 +621,7 @@ const addItemToCart = (cart, item) => {
 };
 ```
 
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Don't write to global functions
 Polluting globals is a bad practice in JavaScript because you could clash with another
@@ -651,7 +651,7 @@ class SuperArray extends Array {
   }
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Favor functional programming over imperative programming
 JavaScript isn't a functional language in the way that Haskell is, but it has
@@ -707,7 +707,7 @@ const totalOutput = programmerOutput
   .map((programmer) => programmer.linesOfCode)
   .reduce((acc, linesOfCode) => acc + linesOfCode, INITIAL_VALUE);
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Encapsulate conditionals
 
@@ -728,7 +728,7 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
   // ...
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Avoid negative conditionals
 
@@ -753,7 +753,7 @@ if (isDOMNodePresent(node)) {
   // ...
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Avoid conditionals
 This seems like an impossible task. Upon first hearing this, most people say,
@@ -809,7 +809,7 @@ class Cessna extends Airplane {
   }
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Avoid type-checking (part 1)
 JavaScript is untyped, which means your functions can take any type of argument.
@@ -834,7 +834,7 @@ function travelToTexas(vehicle) {
   vehicle.move(this.currentLocation, new Location('texas'));
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Avoid type-checking (part 2)
 If you are working with basic primitive values like strings, integers, and arrays,
@@ -865,7 +865,7 @@ function combine(val1, val2) {
   return val1 + val2;
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Don't over-optimize
 Modern browsers do a lot of optimization under-the-hood at runtime. A lot of
@@ -890,7 +890,7 @@ for (let i = 0; i < list.length; i++) {
   // ...
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Remove dead code
 Dead code is just as bad as duplicate code. There's no reason to keep it in
@@ -921,7 +921,7 @@ function newRequestModule(url) {
 const req = newRequestModule;
 inventoryTracker('apples', req, 'www.inventory-awesome.io');
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ## **Objects and Data Structures**
 ### Use getters and setters
@@ -980,7 +980,7 @@ function makeBankAccount() {
 const account = makeBankAccount();
 account.setBalance(100);
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 
 ### Make objects have private members
@@ -1018,7 +1018,7 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 delete employee.name;
 console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 
 ## **Classes**
@@ -1095,7 +1095,7 @@ class Human extends Mammal {
   speak() { /* ... */ }
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 
 ### Use method chaining
@@ -1178,7 +1178,7 @@ const car = new Car()
   .setModel('F-150')
   .save();
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Prefer composition over inheritance
 As stated famously in [*Design Patterns*](https://en.wikipedia.org/wiki/Design_Patterns) by the Gang of Four,
@@ -1244,7 +1244,7 @@ class Employee {
   // ...
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ## **SOLID**
 ### Single Responsibility Principle (SRP)
@@ -1302,7 +1302,7 @@ class UserSettings {
   }
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Open/Closed Principle (OCP)
 As stated by Bertrand Meyer, "software entities (classes, modules, functions,
@@ -1389,7 +1389,7 @@ class HttpRequester {
   }
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Liskov Substitution Principle (LSP)
 This is a scary term for a very simple concept. It's formally defined as "If S
@@ -1504,7 +1504,7 @@ function renderLargeShapes(shapes) {
 const shapes = [new Rectangle(4, 5), new Rectangle(4, 5), new Square(5)];
 renderLargeShapes(shapes);
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Interface Segregation Principle (ISP)
 JavaScript doesn't have interfaces so this principle doesn't apply as strictly
@@ -1579,7 +1579,7 @@ const $ = new DOMTraverser({
   }
 });
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Dependency Inversion Principle (DIP)
 This principle states two essential things:
@@ -1674,7 +1674,7 @@ class InventoryRequesterV2 {
 const inventoryTracker = new InventoryTracker(['apples', 'bananas'], new InventoryRequesterV2());
 inventoryTracker.requestItems();
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ## **Testing**
 Testing is more important than shipping. If you have no tests or an
@@ -1742,7 +1742,7 @@ describe('MakeMomentJSGreatAgain', () => {
   });
 });
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ## **Concurrency**
 ### Use Promises, not callbacks
@@ -1787,7 +1787,7 @@ get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin')
   });
 
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Async/Await are even cleaner than Promises
 Promises are a very clean alternative to callbacks, but ES2017/ES8 brings async and await
@@ -1829,7 +1829,7 @@ async function getCleanCodeArticle() {
   }
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 
 ## **Error Handling**
@@ -1902,7 +1902,7 @@ getdata()
   });
 ```
 
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 
 ## **Formatting**
@@ -1949,7 +1949,7 @@ function restoreDatabase() {}
 class Animal {}
 class Alpaca {}
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 
 ### Function callers and callees should be close
@@ -2035,7 +2035,7 @@ const review = new PerformanceReview(employee);
 review.perfReview();
 ```
 
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ## **Commentarios**
 ### Solo comentar las cosas que tienen logico complexo.
@@ -2078,7 +2078,7 @@ function hashIt(data) {
 }
 
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### No dejes codigo inutilizado en tus archivos 
 Version control exists for a reason. Leave old code in your history.
@@ -2095,7 +2095,7 @@ doStuff();
 ```javascript
 doStuff();
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### No escribas comentarios de jornada 
 Remember, use version control! There's no need for dead code, commented code,
@@ -2120,7 +2120,7 @@ function combine(a, b) {
   return a + b;
 }
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
 
 ### Avoid positional markers
 They usually just add noise. Let the functions and variable names along with the
@@ -2155,4 +2155,4 @@ const actions = function() {
   // ...
 };
 ```
-**[⬆ vuelve hasta arriba](#contenido)**
+**[⬆ vuelve hasta arriba](#Contenido)**
