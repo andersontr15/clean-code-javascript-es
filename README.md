@@ -59,7 +59,7 @@ conseguirUsuario();
 
 ### Utiliza nombres buscables 
 
-Nosotros leemos mucho mas codigo que jamás escribiremos. Es importante que el código que escribimos sea legible y buscable. Cuando faltamos nombrar a los variables de manera buscable y legible, acabamos confundiendo a nuestros lectores. Hecha un vistazo a las herramientas para ayudarte: [buddy.js](https://github.com/danielstjules/buddy.js) and
+Nosotros leemos mucho más codigo que jamás escribiremos. Es importante que el código que escribimos sea legible y buscable. Cuando faltamos nombrar a los variables de manera buscable y legible, acabamos confundiendo a nuestros lectores. Hecha un vistazo a las herramientas para ayudarte: [buddy.js](https://github.com/danielstjules/buddy.js) and
 [ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md)
 
 **Mal hecho:**
