@@ -33,7 +33,7 @@ de *Clean Code*.
 Nuestra obra de ingenieria de software lleva poco mas que 50 años como negocio,
 y aun estamos aprendiendo. Cuando la arquitectura de software llegue a ser tan vieja 
 como la arquitectura si misma, quizas tendremos reglas mas estrictas a las que tenemos que 
-adherir. Hasta entonces, dejemos que estas estimaciones sirven como ejemplo para 
+adherir. Hasta entonces, dejemos que estas estimaciones sirvan como ejemplo para 
 medir la calidad de nuestro codigo en JavaScript que tu y tu equipo producen. 
 
 Una cosa mas: el saber de que este libro no te hara inmediatemente un ingeniero
