@@ -576,38 +576,34 @@ console.log(newName); // ['Ryan', 'McDermott'];
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Avoid Side Effects (part 2)
-In JavaScript, primitives are passed by value and objects/arrays are passed by
-reference. In the case of objects and arrays, if your function makes a change
-in a shopping cart array, for example, by adding an item to purchase,
-then any other function that uses that `cart` array will be affected by this
-addition. That may be great, however it can be bad too. Let's imagine a bad
-situation:
+### Evitar los efectos extra(parte 2)
+En JavaScript, los primitivos se pasan por valores y los objetos/arrays se
+pasan por referencia. En el caso de los objetos y los array, si tu funcion 
+hace un cambio en la shopping cart array, por ejemplo, con agregar una cosa a 
+la hora de comprar, resulta que todas las demas funciones que utilizan este array 
+estaran afectadas. Esto puede ser bueno o malo. Imaginemos una situacion mala:
 
-The user clicks the "Purchase", button which calls a `purchase` function that
-spawns a network request and sends the `cart` array to the server. Because
-of a bad network connection, the `purchase` function has to keep retrying the
-request. Now, what if in the meantime the user accidentally clicks "Add to Cart"
-button on an item they don't actually want before the network request begins?
-If that happens and the network request begins, then that purchase function
-will send the accidentally added item because it has a reference to a shopping
-cart array that the `addItemToCart` function modified by adding an unwanted
-item.
+El usuario le da clik a "Comprarar", un boton que invoca la funcion de "comprar".
+Esta funcion hace una solicitud del red y envia el array de 'cart' hasta el servidor.
+Debido a la conexion mala del red, la funcion sigue intentando invocarse para mandar 
+la solicitud. Ahora, que pasa mientras tanto cuando el usuario le da click otra vez 
+al boton en una cosa que no querian antes de que empezase la solicitud del red? 
+Bueno, si pasa eso y comienza la solicitud del red, la funcion de 'comprar' 
+mandara sin querer la cosa que estaba agregada accidentalmente ya que tiene una 
+referencia al array de 'shopping cart' que la funcion 'addItemToCart' modifico 
+con agregar una cosa no deseada.
 
-A great solution would be for the `addItemToCart` to always clone the `cart`,
-edit it, and return the clone. This ensures that no other functions that are
-holding onto a reference of the shopping cart will be affected by any changes.
+Una buena solucion seria que la funcion 'addItemToCart' siempre copiara la 'carta',
+editarla, y devolversela a la copia. Esto asegura que ninguna otra funcion relacionada 
+se afectara por estos cambios.
 
-Two caveats to mention to this approach:
-  1. There might be cases where you actually want to modify the input object,
-but when you adopt this programming practice you will find that those case
-are pretty rare. Most things can be refactored to have no side effects!
-
-  2. Cloning big objects can be very expensive in terms of performance. Luckily,
-this isn't a big issue in practice because there are
-[great libraries](https://facebook.github.io/immutable-js/) that allow
-this kind of programming approach to be fast and not as memory intensive as
-it would be for you to manually clone objects and arrays.
+Dos cosas para mencionar con esta solucion:
+  1. Puede que existan escenarios donde de verdad quieres modificar el objeto de input, 
+  pero cuando adoptas esta practicar de programar, te daras cuentas de que estos casos son 
+  bastante unicos.
+  2. Copiar objetos grandes pueden ser muy caros en cuanto a la velocidad y calidad de tu programa.
+  Fortunadamente, no hay mucho problema con esto ya que existen muchas [recursos](https://facebook.github.io/immutable-js/)
+  que nos dejan lograr el copiar de objetos y arrays sin perder actuacion.
 
 **Mal hecho:**
 ```javascript
@@ -625,7 +621,7 @@ const addItemToCart = (cart, item) => {
 
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Don't write to global functions
+### No escribas hasta las funciones globales
 Polluting globals is a bad practice in JavaScript because you could clash with another
 library and the user of your API would be none-the-wiser until they get an
 exception in production. Let's think about an example: what if you wanted to
@@ -635,6 +631,8 @@ to the `Array.prototype`, but it could clash with another library that tried
 to do the same thing. What if that other library was just using `diff` to find
 the difference between the first and last elements of an array? This is why it
 would be much better to just use ES2015/ES6 classes and simply extend the `Array` global.
+
+
 
 **Mal hecho:**
 ```javascript
@@ -655,10 +653,10 @@ class SuperArray extends Array {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Favor functional programming over imperative programming
-JavaScript isn't a functional language in the way that Haskell is, but it has
-a functional flavor to it. Functional languages are cleaner and easier to test.
-Favor this style of programming when you can.
+### Favorece a la programacion funcional en vez de la programaccion imperativa
+JavaScript no es un idioma funcional tal como es Haskell, pero tiene su propio 
+sabor funcional. Los idiomas funcionales son mas limipos y faciles de comprobar.
+Favorece este estilo de programar cuando puedes.
 
 **Mal hecho:**
 ```javascript
@@ -711,7 +709,7 @@ const totalOutput = programmerOutput
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Encapsulate conditionals
+### Encapsular condicionales
 
 **Mal hecho:**
 ```javascript
@@ -732,7 +730,7 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Avoid negative conditionals
+### Evitar condicionales negativas
 
 **Mal hecho:**
 ```javascript
@@ -757,7 +755,7 @@ if (isDOMNodePresent(node)) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Avoid conditionals
+### Evitar condicionales
 This seems like an impossible task. Upon first hearing this, most people say,
 "how am I supposed to do anything without an `if` statement?" The answer is that
 you can use polymorphism to achieve the same task in many cases. The second
@@ -766,6 +764,11 @@ answer is a previous clean code concept we learned: a function should only do
 one thing. When you have classes and functions that have `if` statements, you
 are telling your user that your function does more than one thing. Remember,
 just do one thing.
+
+Este parece ser un reto imposible. Al escuchar esto por primera vez, 
+la mayoria de la gente dira: "como se supone que programo sin un 'if'?"
+Bueno, la respuesta es que puedes utilizar polymorfismo para lograr los 
+mismos retos en muchos escenarios. La segunda pregunta 
 
 **Mal hecho:**
 ```javascript
@@ -813,7 +816,7 @@ class Cessna extends Airplane {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Avoid type-checking (part 1)
+### Evitar la comprobacion de tipos (parte 1)
 JavaScript is untyped, which means your functions can take any type of argument.
 Sometimes you are bitten by this freedom and it becomes tempting to do
 type-checking in your functions. There are many ways to avoid having to do this.
@@ -838,7 +841,7 @@ function travelToTexas(vehicle) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Avoid type-checking (part 2)
+### Evitar la comprobacion de tipos (parte 2)
 If you are working with basic primitive values like strings, integers, and arrays,
 and you can't use polymorphism but you still feel the need to type-check,
 you should consider using TypeScript. It is an excellent alternative to normal
@@ -894,10 +897,12 @@ for (let i = 0; i < list.length; i++) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Remove dead code
+### Eliminar el codigo muerto
 Dead code is just as bad as duplicate code. There's no reason to keep it in
 your codebase. If it's not being called, get rid of it! It will still be safe
 in your version history if you still need it.
+El codigo muerto es tan maligante como el codigo duplicado. No hay razon 
+para guardarlo. Si no se usa, eliminalo!
 
 **Mal hecho:**
 ```javascript
