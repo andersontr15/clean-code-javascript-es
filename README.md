@@ -77,8 +77,8 @@ getUser();
 ### Utiliza nombres buscables 
 
 Nosotros leemos mucho mas codigo que jamas escribiremos. Es importante 
-que el codigo que escribimos sea leeible y buscable. Cuando *faltamos* nombrar a 
-los variables de manera buscable y leeible, acabamos confundiendoles a nuestros leedores.
+que el codigo que escribimos sea legible y buscable. Cuando *faltamos* nombrar a 
+los variables de manera buscable y legible, acabamos confundiendoles a nuestros leedores.
 Hecha un vistazo a las herramientas para ayudarte: [buddy.js](https://github.com/danielstjules/buddy.js) and
 [ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md)
 
@@ -1310,7 +1310,7 @@ class UserSettings {
 
 ### Principio de abierto/cerrado (OCP)
 Como dijo Bertrand Meyer, "las entidades de software (clases, modulos, funciones, etc.)
-debe abrirse para extension, pero cerrarse para modificacion. Que significa eso? 
+deben abrirse para extension, pero cerrarse para modificacion. Que significa eso? 
 Bueno, este principio basicamente nos dice que debes permitir que tus usarios 
 introduzcan nuevas funcionalidades sin cambiar el codigo existente.
 
@@ -1836,13 +1836,13 @@ async function getCleanCodeArticle() {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 
-## **Error Handling**
-Thrown errors are a good thing! They mean the runtime has successfully
-identified when something in your program has gone wrong and it's letting
-you know by stopping function execution on the current stack, killing the
-process (in Node), and notifying you in the console with a stack trace.
+## **Resolver los errores**
+Los errores emergidos son buenos! Significan que tu ejecucion ha tenido 
+exito a la hora de idetnificar un error en tu programa y te avisa con 
+detener la ejeucion del 'stack' actual, matando el proceso (en Node),
+y notificarte en el 'console' con un reporte de 'stack trace'
 
-### Don't ignore caught errors
+### No les ignores a los errores pillados
 Doing nothing with a caught error doesn't give you the ability to ever fix
 or react to said error. Logging the error to the console (`console.log`)
 isn't much better as often times it can get lost in a sea of things printed
@@ -1874,9 +1874,9 @@ try {
 }
 ```
 
-### Don't ignore rejected promises
-For the same reason you shouldn't ignore caught errors
-from `try/catch`.
+### No le ignores a las promesas rechazadas 
+Igual que no debes ignorar a los errores no pillados 
+de un 'try/catch'
 
 **Mal hecho:**
 ```javascript
@@ -1915,9 +1915,8 @@ Hay muchas [herramientas](http://standardjs.com/rules.html) para facilitar esto.
 Utiliza una! Te desperdicias de tu propio tiempo y el tiempo de los demas cuando 
 discutes sobre formatear.
 
-For things that don't fall under the purview of automatic formatting
-(indentation, tabs vs. spaces, double vs. single quotes, etc.) look here
-for some guidance.
+Para las cosas que no tienen relevancia al formateo automatico (indentacion, tabulos vs espacios,
+quotaciones de doble vs single, etc.), busca aqui para aconsejarte.
 
 ### Use consistent capitalization
 JavaScript is untyped, so capitalization tells you a lot about your variables,
@@ -1956,10 +1955,11 @@ class Alpaca {}
 **[⬆ vuelve hasta arriba](#contenido)**
 
 
-### Function callers and callees should be close
-If a function calls another, keep those functions vertically close in the source
-file. Ideally, keep the caller right above the callee. We tend to read code from
-top-to-bottom, like a newspaper. Because of this, make your code read that way.
+### Los llamadores y llamantes de las funciones deben ser cercas 
+Si una funcion le llama a otra, mantiene esa funcionas verticalmente cerca en 
+su archivo de fuente. Idealmente, mantiente el llamador justo encima del llamante.
+Solemos leer codigo arriba-abajo, como un periodico. Debido a esto, haz que tus programas
+sean legibles asi.
 
 **Mal hecho:**
 ```javascript
