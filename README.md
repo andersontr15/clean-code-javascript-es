@@ -10,7 +10,7 @@ Repositorio original: [ryanmcdermott/clean-code-javascript](https://github.com/r
   5. [Clases](#clases)
   6. [SOLID](#solid)
   7. [Pruebas](#pruebas)
-  8. [Concurencia](#concurencia)
+  8. [Concurrencia](#concucrencia)
   9. [Resolver los errores](#resolver-los-errores)
   10. [Formatear](#formatear)
   11. [Comentarios](#commentarios)
@@ -2125,6 +2125,7 @@ function combine(a, b) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Avoid positional markers
+### Evitar 
 They usually just add noise. Let the functions and variable names along with the
 proper indentation and formatting give the visual structure to your code.
 
