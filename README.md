@@ -221,12 +221,7 @@ createMenu({
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Las funciones deben existir para hacer una sola cosa 
-Esta regla por mucho es la mas importante en la ingenieria de software.
-Cuando las funciones sirven para hacer mas que una sola cosa, se dificultan 
-las pruebas, la composicion y el entender. Cuando puedes isolar una funcion 
-hasta tener solo una accion, se pueden mejorar mas facil y tu codigo llegue 
-a ser mucho mas limpio. Si solamente entiendes una cosa de esta guia, entiende esta
-reglas y estaras adelantado de muchos desarrolladores. 
+Esta regla por mucho es la más importante en la ingeniería de software. Cuando las funciones sirven para hacer más que una sola cosa, se dificultan las pruebas, la composición y el entender. Cuando puedes isolar una función hasta tener solo una acción, se pueden mejorar más fácil y tu codigo llegue a ser mucho más limpio. Si solamente entiendes una cosa de esta guia, entiende esta reglas y estarás adelantado de muchos desarrolladores.
 
 **Mal hecho:**
 ```javascript
