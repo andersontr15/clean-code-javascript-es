@@ -18,7 +18,7 @@ Repositorio original: [ryanmcdermott/clean-code-javascript](https://github.com/r
 ## Introducción
 
 ![Imagen gracioso de la estimacion de la calidad de software como una cifra 
-de cuantas expletitvas que uno puede gritar al leer programas](http://www.osnews.com/images/comics/wtfm.jpg)
+de cuantos expletivos que uno puede gritar al leer programas](http://www.osnews.com/images/comics/wtfm.jpg)
 
 Los principios de la ingenieria de software, del libro de Robert C. Martin
 [*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
