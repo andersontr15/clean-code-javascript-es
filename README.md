@@ -14,7 +14,6 @@ Repositorio original: [ryanmcdermott/clean-code-javascript](https://github.com/r
   9. [Resolver los errores](#resolver-los-errores)
   10. [Formatear](#formatear)
   11. [Comentarios](#commentarios)
-  12. [Traduccion](#traduccion)
 
 ## Introducción
 
