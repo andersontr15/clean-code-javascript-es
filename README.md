@@ -84,7 +84,7 @@ Hecha un vistazo a las herramientas para ayudarte: [buddy.js](https://github.com
 **Mal hecho:**
 ```javascript
 // Para que rayos sirve 86400000? 
-setTimeout(blastOff, 86400000);
+setTimeout(hastaLaInfinidadYMasAlla, 86400000);
 
 ```
 
@@ -93,12 +93,12 @@ setTimeout(blastOff, 86400000);
 // Declaralos como variables globales de 'const'.
 const MILISEGUNDOS_EN_UN_DIA = 8640000;
 
-setTimeout(hastaInfinidadYMasAlla, MILISEGUNDOS_EN_UN_DIA);
+setTimeout(hastaLaInfinidadYMasAlla, MILISEGUNDOS_EN_UN_DIA);
 
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Utiliza variables explanatarios 
+### Utiliza variables explicativos
 **Mal hecho:**
 ```javascript
 const address = 'One Infinite Loop, Cupertino 95014';
