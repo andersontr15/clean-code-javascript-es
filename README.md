@@ -343,26 +343,13 @@ function parseBetterJSAlternative(code) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Eliminar codigo duplicado 
-Haz tanto como puedes para evitar codigo duplicado. El codigo duplicado es malo 
-ya que significa que hay varios lugares donde hay que actualizar algo si un cambio 
-es necesario en tu logico.
+Haz tanto como puedas para evitar codigo duplicado. El código duplicado es malo ya que significa que hay varios lugares donde hay que actualizar algo si un cambio es necesario en tu logico.
 
-Imaginate que estas un restaurante y necesitas organizar tu inventorio: todos 
-tus tomates, cebolla, pimientos y tal. Si tienes varias listas donde organizas 
-el inventorio, cada lista se tendra que actualizar en cuanto se baja tu inventorio. 
-En cambio, si logras tener una sola lista, solo se actualizara en un lugar a la hora 
-de apuntar el inventorio. 
+Imaginate que estas un restaurante y necesitas organizar tu inventario: todos tus tomates, cebolla, pimientos y tal. Si tienes varias listas donde organizas el inventario, cada lista se tendrá que actualizar en cuanto se baja tu inventario. En cambio, si logras tener una sola lista, solo se actualizará en un lugar a la hora de apuntar el inventario.
 
-Muchas veces tienes codigo duplicado debido al tener dos o mas cosas semejantes.
-Estos archivos comparten varias cosas, pero su diferencia te obliga separarlos para 
-tener dos o mas funciones que hacen cosas muy similares. Remover el codigo duplicado 
-significa que se puede hacer la misma cosa que un solo funcion/modulo/clase.
+Muchas veces tienes codigo duplicado debido al tener dos o más cosas semejantes. Estos archivos comparten varias cosas, pero su diferencia te obliga separarlos para tener dos o más funciones que hacen cosas muy similares. Remover el código duplicado significa que se puede hacer la misma cosa que un solo función/módulo/clase.
 
-Obtener la abstraccion correcta es critica y por eso debes de adherir a los principios 
-de SOLID que se explican en las seccion de *Clases*. Las abstraciones males pueden ser 
-aun peores que el codigo duplicado, asi que ten cuidado! Es decir, si puedes hacer una 
-buena abstraccion, hazla! No te repitas, si no te daras cuenta de que andas actualizando 
-mucho codigo en varios lugares a la hora de implementar un cambio.
+Obtener la abstracción correcta es crítica y por eso debes de adherir a los principios de SOLID que se explican en las sección de Clases. Las abstraciones males pueden ser aún peores que el código duplicado, asi que ten cuidado! Es decir, si puedes hacer una buena abstracción, hazla! No te repitas, si no te darás cuenta de que andas actualizando mucho código en varios lugares a la hora de implementar un cambio.
 
 **Mal hecho:**
 ```javascript
