@@ -24,7 +24,7 @@ de cuantas expletitvas que uno puede gritar al leer programas](http://www.osnews
 Los principios de la ingenieria de software, del libro de Robert C. Martin
 [*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
 adaptado para JavaScript. Esta no es una guia de estilo, sino, es una guia para crear 
-software que es reutilizable, comprendible y que se puede mejorar en JavaScript.
+software que sea reutilizable, comprendible y que se pueda mejorar con el tiempo.
 
 No hay que seguir tan estrictamente todos los principios en este libro, y vale la pena
 mencionar que hacia muchos habra controversia en cuanto al consentimiento. Estas son estimaciones 
@@ -503,8 +503,10 @@ createMenu(menuConfig);
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### No utilices 'flags' como parametros de las funciones
-Flags tell your user that this function does more than one thing. Functions should do one thing. Split out your functions if they are following different code paths based on a boolean.
+### No utilices 'marcadores' como parametros de las funciones
+Los marcadores existen para decirle a tu usuario que esta function hace mas que una sola cosa. 
+Como se ha mencionado antes las funciones deben hacer una sola cosa. 
+Divide tus funciones en varias funciones mas pequenas si se adhieren a distintos metodos basados en un booleado. 
 
 **Mal hecho:**
 ```javascript
@@ -530,20 +532,20 @@ function createTempFile(name) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Evitar que las funciones produzcan efectos extras (parte 1)
-A function produces a side effect if it does anything other than take a value in
-and return another value or values. A side effect could be writing to a file,
-modifying some global variable, or accidentally wiring all your money to a
-stranger.
+Una funcion produce un efecto extra si hace cualquier cosa mas que solo tomar 
+un valor y volver(lo/los). Un efecto extra podria ser escribir a un archivo, 
+modificar un variable global, o accidentalmente enviar todo tu dinero a un 
+desconfiado. 
 
-Now, you do need to have side effects in a program on occasion. Like the previous
-example, you might need to write to a file. What you want to do is to
-centralize where you are doing this. Don't have several functions and classes
-that write to a particular file. Have one service that does it. One and only one.
+Bueno, las funciones necesitan tener efectos extras a menudo. Como el ejemplo anterior, 
+puede que sea necesario escribir hasta un archivo. En ese caso, hay que centralizar en el 'por que' 
+de lo que estas haciendo. No tengas varias funciones y clases que escriben hasta un archivo particular. 
+En cambio, crea un 'servicio' que se dedica a eso: uno y solo un servicio.
 
-The main point is to avoid common pitfalls like sharing state between objects
-without any structure, using mutable data types that can be written to by anything,
-and not centralizing where your side effects occur. If you can do this, you will
-be happier than the vast majority of other programmers.
+El punto clave aqui es evitar las equivocaciones comunes como compartir 'estado' entre 
+objeto sin ninguna estructura, utilizar tipos de data mutables que se pueden escribir hasta 
+lo que sea, y no centralizar donde se ocurren los efectos extras. Si puedes conseguir esto, 
+seras mas feliz que la mayoria de los demas programadores.
 
 **Mal hecho:**
 ```javascript
