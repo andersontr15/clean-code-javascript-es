@@ -389,17 +389,16 @@ el inventorio, cada lista se tendra que actualizar en cuanto se baja tu inventor
 En cambio, si logras tener una sola lista, solo se actualizara en un lugar a la hora 
 de apuntar el inventorio. 
 
-Oftentimes you have duplicate code because you have two or more slightly
-different things, that share a lot in common, but their differences force you
-to have two or more separate functions that do much of the same things. Removing
-duplicate code means creating an abstraction that can handle this set of
-different things with just one function/module/class.
+Muchas veces tienes codigo duplicado debido al tener dos o mas cosas semejantes.
+Estos archivos comparten varias cosas, pero su diferencia te obliga separarlos para 
+tener dos o mas funciones que hacen cosas muy similares. Remover el codigo duplicado 
+significa que se puede hacer la misma cosa que un solo funcion/modulo/clase.
 
-Getting the abstraction right is critical, that's why you should follow the
-SOLID principles laid out in the *Classes* section. Bad abstractions can be
-worse than duplicate code, so be careful! Having said this, if you can make
-a good abstraction, do it! Don't repeat yourself, otherwise you'll find yourself
-updating multiple places anytime you want to change one thing.
+Obtener la abstraccion correcta es critica y por eso debes de adherir a los principios 
+de SOLID que se explican en las seccion de *Clases*. Las abstraciones males pueden ser 
+aun peores que el codigo duplicado, asi que ten cuidado! Es decir, si puedes hacer una 
+buena abstraccion, hazla! No te repitas, si no te daras cuenta de que andas actualizando 
+mucho codigo en varios lugares a la hora de implementar un cambio.
 
 **Mal hecho:**
 ```javascript
