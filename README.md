@@ -76,7 +76,7 @@ getUser();
 
 ### Utiliza nombres buscables 
 
-Nosotros leemos mucho mas codigo que jamos escribiremos. Es importante 
+Nosotros leemos mucho mas codigo que jamas escribiremos. Es importante 
 que el codigo que escribimos sea leeible y buscable. Cuando *faltamos* nombrar a 
 los variables de manera buscable y leeible, acabamos confundiendoles a nuestros leedores.
 Hecha un vistazo a las herramientas para ayudarte: [buddy.js](https://github.com/danielstjules/buddy.js) and
@@ -253,11 +253,12 @@ createMenu({
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Las funciones deben existir para hacer una sola cosa 
-This is by far the most important rule in software engineering. When functions
-do more than one thing, they are harder to compose, test, and reason about.
-When you can isolate a function to just one action, they can be refactored
-easily and your code will read much cleaner. If you take nothing else away from
-this guide other than this, you'll be ahead of many developers.
+Esta regla por mucho es el mas importante en la ingenieria de software.
+Cuando las funciones sirven para hacer mas que una sola cosa, se dificultan 
+las pruebas, la composicion y el entender. Cuando puedes isolar una funcion 
+hasta tener solo una accion, se pueden mejorar mas facil y tu codigo llegue 
+a ser mucho mas limpio. Si solamente entiendes una cosa de esta guia, entiende esta
+reglas y estaras adelantado de muchos desarrolladores. 
 
 **Mal hecho:**
 ```javascript
