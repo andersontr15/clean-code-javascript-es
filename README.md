@@ -3,10 +3,10 @@ Repositorio original: [ryanmcdermott/clean-code-javascript](https://github.com/r
 # clean-code-javascript 
 
 ## Contenido
-  1. [Introduccion](#introduccion)
+  1. [Introducción](#introducción)
   2. [Variables](#variables)
   3. [Funciones](#funciones)
-  4. [Objectos y estructuras de data](#objectos-y-estructuras-de-data)
+  4. [Objetos y estructuras de data](#objectos-y-estructuras-de-data)
   5. [Clases](#clases)
   6. [SOLID](#solid)
   7. [Pruebas](#pruebas)
@@ -16,7 +16,7 @@ Repositorio original: [ryanmcdermott/clean-code-javascript](https://github.com/r
   11. [Comentarios](#commentarios)
   12. [Traduccion](#traduccion)
 
-## Introduccion
+## Introducción
 
 ![Imagen gracioso de la estimacion de la calidad de software como una cifra 
 de cuantas expletitvas que uno puede gritar al leer programas](http://www.osnews.com/images/comics/wtfm.jpg)
@@ -63,14 +63,14 @@ const fechaActual = moment().format('YYYY/MM/DD');
 
 **Mal hecho:**
 ```javascript
-getUserInfo();
-getClientData();
-getCustomerRecord();
+conseguirInfoUsuario();
+conseguirDataDelCliente();
+conseguirRecordDelCliente();
 ```
 
 **Bien hecho:**
 ```javascript
-getUser();
+conseguirUsuario();
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
@@ -92,9 +92,9 @@ setTimeout(blastOff, 86400000);
 **Bien hecho:**
 ```javascript
 // Declaralos como variables globales de 'const'.
-const MILLISECONDS_IN_A_DAY = 86400000;
+const MILISEGUNDOS_EN_UN_DIA = 8640000;
 
-setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
+setTimeout(hastaInfinidadYMasAlla, MILISEGUNDOS_EN_UN_DIA);
 
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
@@ -121,33 +121,33 @@ El Explicito es mejor que el implicito.
 
 **Mal hecho:**
 ```javascript
-const locations = ['Austin', 'New York', 'San Francisco'];
-locations.forEach((l) => {
-  doStuff();
-  doSomeOtherStuff();
+const ubicaciones = ['Austin', 'New York', 'San Francisco'];
+ubicaciones.forEach((u) => {
+  hazUnaCosa();
+  hasMasCosas()
   // ...
   // ...
   // ...
-  // Espera, para que existe la '1'?
-  dispatch(l);
+  // Espera, para que existe la 'u'?
+  ejecuta(u);
 });
 ```
 
 **Bien hecho:**
 ```javascript
-const locations = ['Austin', 'New York', 'San Francisco'];
-locations.forEach((location) => {
-  doStuff();
-  doSomeOtherStuff();
+const ubicaciones = ['Austin', 'New York', 'San Francisco'];
+ubicaciones.forEach((ubicacion) => {
+  hazUnaCosa();
+  hasMasCosas()
   // ...
   // ...
   // ...
-  dispatch(location);
+  ejecuta(ubicacion);
 });
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### No incluyas contexto unnecesario 
+### No incluyas contexto innecesario  
 Si tu clase / nombre tu objeto te dice algo, no lo repitas 
 en el nombre de variable tambien. 
 
