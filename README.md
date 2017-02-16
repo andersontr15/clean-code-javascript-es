@@ -178,7 +178,7 @@ function paintCar(car) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Utiliza argumentos defaultos en vez utilizar condicionales 
+### Utiliza argumentos originales en vez utilizar condicionales 
 Los argumentos defaults muchas veces son mas organizados que utilizar los condicionales.
 Se conciente que si tu los usas, tu funcion solo tendra valores para los argumentos de 'undefined'.
 Los demas valores de 'falso' como `''`, `""`, `false`, `null`, `0`, y
@@ -203,7 +203,7 @@ function createMicrobrewery(breweryName = 'Hipster Brew Co.') {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ## **Funciones**
-### Argumentos de funciones (2 o menos idealmente )
+### Argumentos de funciones (2 o menos idealmente)
 Limitar la cantidad de parametros de tus funciones es increiblemente importante 
 ya que hace que tus pruebas del codigo sean mas faciles. Al pasar los 3 argumentos, 
 llegaras a un escenario de una explosion combinatoria en que hay que comprobar con pruebas
@@ -252,7 +252,7 @@ createMenu({
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Las funciones deben existir para hacer una sola cosa 
-Esta regla por mucho es el mas importante en la ingenieria de software.
+Esta regla por mucho es la mas importante en la ingenieria de software.
 Cuando las funciones sirven para hacer mas que una sola cosa, se dificultan 
 las pruebas, la composicion y el entender. Cuando puedes isolar una funcion 
 hasta tener solo una accion, se pueden mejorar mas facil y tu codigo llegue 
@@ -311,9 +311,9 @@ addMonthToDate(1, date);
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Las funciones deben tener solo un nivel de abstraccion 
-When you have more than one level of abstraction your function is usually
-doing too much. Splitting up functions leads to reusability and easier
-testing.
+Cuando tienes mas que un nivel de abstraccion tu funcion suele servir 
+para hacer demasiado. Crear varias funciones mas pequenas se debe a mejor reutilizacion
+y comprobacion mas facil. 
 
 **Mal hecho:**
 ```javascript
@@ -379,14 +379,15 @@ function parseBetterJSAlternative(code) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Eliminar codigo duplicado 
-Do your absolute best to avoid duplicate code. Duplicate code is bad because it
-means that there's more than one place to alter something if you need to change
-some logic.
+Haz tanto como puedes para evitar codigo duplicado. El codigo duplicado es malo 
+ya que significa que hay varios lugares donde hay que actualizar algo si un cambio 
+es necesario en tu logico.
 
-Imagine if you run a restaurant and you keep track of your inventory: all your
-tomatoes, onions, garlic, spices, etc. If you have multiple lists that
-you keep this on, then all have to be updated when you serve a dish with
-tomatoes in them. If you only have one list, there's only one place to update!
+Imaginate que estas un restaurante y necesitas organizar tu inventorio: todos 
+tus tomates, cebolla, pimientos y tal. Si tienes varias listas donde organizas 
+el inventorio, cada lista se tendra que actualizar en cuanto se baja tu inventorio. 
+En cambio, si logras tener una sola lista, solo se actualizara en un lugar a la hora 
+de apuntar el inventorio. 
 
 Oftentimes you have duplicate code because you have two or more slightly
 different things, that share a lot in common, but their differences force you
