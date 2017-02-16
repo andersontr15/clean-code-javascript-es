@@ -28,10 +28,10 @@ software que sea reutilizable, comprendible y que se pueda mejorar con el tiempo
 
 No hay que seguir tan estrictamente todos los principios en este libro, y vale la pena
 mencionar que hacia muchos habra controversia en cuanto al consentimiento. Estas son estimaciones 
-y nada mas, pero son estimaciones hechas despues de muchos anos de experencia colectiva de los autores 
+y nada mas, pero son estimaciones hechas despues de muchos años de experencia colectiva de los autores 
 de *Clean Code*.
 
-Nuestra obra de ingenieria de software lleva poco mas que 50 anos como negocio,
+Nuestra obra de ingenieria de software lleva poco mas que 50 años como negocio,
 y aun estamos aprendiendo. Cuando la arquitectura de software llegue a ser tan vieja 
 como la arquitectura si misma, quizas tendremos reglas mas estrictas a las que tenemos que 
 adherir. Hasta entonces, dejemos que estas estimaciones sirven como ejemplo para 
@@ -39,7 +39,7 @@ medir la calidad de nuestro codigo en JavaScript que tu y tu equipo producen.
 
 Una cosa mas: el saber de que este libro no te hara inmediatemente un ingeniero
 mucho mas mejor es importante, y tampoco lo de trabajar con estas herramientas durante
-muchos anos no garantiza que usted no se equivoque nunca. Cada parte del codigo empieza 
+muchos años no garantiza que usted no se equivoque nunca. Cada parte del codigo empieza 
 como primer draft, como se molda el clay hasta llegar a la forma final. 
 Por fin, chiselamos las imperfecciones cuando lo repasamos con nuestros companeros 
 de trabajo. No seas tan duro contigo mismo para las etapas iniciales que necesitan
