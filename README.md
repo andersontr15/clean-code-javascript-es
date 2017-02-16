@@ -13,7 +13,7 @@ Repositorio original: [ryanmcdermott/clean-code-javascript](https://github.com/r
   8. [Concurencia](#concurencia)
   9. [Resolver los errores](#resolver-los-errores)
   10. [Formatear](#formatear)
-  11. [Commentarios](#commentarios)
+  11. [Comentarios](#commentarios)
   12. [Traduccion](#traduccion)
 
 ## Introduccion
