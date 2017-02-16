@@ -898,11 +898,9 @@ for (let i = 0; i < list.length; i++) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Eliminar el codigo muerto
-Dead code is just as bad as duplicate code. There's no reason to keep it in
-your codebase. If it's not being called, get rid of it! It will still be safe
-in your version history if you still need it.
 El codigo muerto es tan maligante como el codigo duplicado. No hay razon 
-para guardarlo. Si no se usa, eliminalo!
+para guardarlo. Si no se usa, eliminalo! Aun estara en tu historia del control version
+si de verdad lo necesitas.
 
 **Mal hecho:**
 ```javascript
@@ -930,7 +928,7 @@ inventoryTracker('apples', req, 'www.inventory-awesome.io');
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-## **Objects and Data Structures**
+## **Objetos y estructuras de data**
 ### Use getters and setters
 Using getters and setters to access data on objects could be better than simply
 looking for a property on an object. "Why?" you might ask. Well, here's an
@@ -1028,8 +1026,8 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 **[⬆ vuelve hasta arriba](#contenido)**
 
 
-## **Classes**
-### Prefer ES2015/ES6 classes over ES5 plain functions
+## **Clases**
+### Prefiere ES2015/ES6 clases en vez de funciones normales de ES5
 It's very difficult to get readable class inheritance, construction, and method
 definitions for classical ES5 classes. If you need inheritance (and be aware
 that you might not), then prefer ES2015/ES6 classes. However, prefer small functions over
@@ -1105,7 +1103,7 @@ class Human extends Mammal {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 
-### Use method chaining
+### Utiliza la agregaccion de metodos
 This pattern is very useful in JavaScript and you see it in many libraries such
 as jQuery and Lodash. It allows your code to be expressive, and less verbose.
 For that reason, I say, use method chaining and take a look at how clean your code
@@ -1254,15 +1252,14 @@ class Employee {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ## **SOLID**
-### Single Responsibility Principle (SRP)
-As stated in Clean Code, "There should never be more than one reason for a class
-to change". It's tempting to jam-pack a class with a lot of functionality, like
-when you can only take one suitcase on your flight. The issue with this is
-that your class won't be conceptually cohesive and it will give it many reasons
-to change. Minimizing the amount of times you need to change a class is important.
-It's important because if too much functionality is in one class and you modify
-a piece of it, it can be difficult to understand how that will affect other
-dependent modules in your codebase.
+### El principio unico de responsabilidad (SRP)
+Como se menciona en Clean Code, "Nunca debe exister mas que una sola razon para cambiar 
+una clase". Vale la pena decir que es normal querer llenar una 'clase' con muchas funciones, 
+igual que cuando solo te permiten llevar una maleta en el vuelo. El problema existe en que 
+tu 'clase' no estara cohesivo conceptualmente y le dara muchas razones para cambiarse.
+Minimizar la cantidad de veces que necesitas cambiar una clase es importante. Es importante 
+ya que con demasiada funcionalidad viene dificultad de modificarlo y entender como afectara 
+a otros modulos dependientes en tu programa.
 
 **Mal hecho:**
 ```javascript
@@ -1311,11 +1308,11 @@ class UserSettings {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Open/Closed Principle (OCP)
-As stated by Bertrand Meyer, "software entities (classes, modules, functions,
-etc.) should be open for extension, but closed for modification." What does that
-mean though? This principle basically states that you should allow users to
-add new functionalities without changing existing code.
+### Principio de abierto/cerrado (OCP)
+Como dijo Bertrand Meyer, "las entidades de software (clases, modulos, funciones, etc.)
+debe abrirse para extension, pero cerrarse para modificacion. Que significa eso? 
+Bueno, este principio basicamente nos dice que debes permitir que tus usarios 
+introduzcan nuevas funcionalidades sin cambiar el codigo existente.
 
 **Mal hecho:**
 ```javascript
