@@ -24,7 +24,7 @@ de cuantas expletitvas que uno puede gritar al leer programas](http://www.osnews
 Principios de la ingenieria de software, del libro de Robert C. Martin
 [*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
 adaptado para JavaScript. Esta no es una guia de estilo, sino, es una guia para crear 
-software que es reusable, comprendible y que se puede refactorar en JavaScript.
+software que es reutilizable, comprendible y que se puede mejorar en JavaScript.
 
 No hay que seguir tan estrictamente todos los principios en este libro, y vale la pena
 mencionar que hacia muchos habra controversia en cuanto al consentimiento. Estas son estimaciones 
