@@ -184,30 +184,19 @@ function createMicrobrewery(breweryName = 'Hipster Brew Co.') {
 
 ## **Funciones**
 ### Argumentos de funciones (2 o menos idealmente)
-Limitar la cantidad de parametros de tus funciones es increiblemente importante 
-ya que hace que tus pruebas del codigo sean mas faciles. Al pasar los 3 argumentos, 
-llegaras a un escenario de una explosion combinatoria en que hay que comprobar con pruebas
-muchos casos unicos con un argumento separado.
 
-Uno o dos argumentos es la situacion ideal, y mas que eso uno debe evitar si es posible.
-Todo lo que se puede consolidar se debe consolidar. Normalmente, si tienes mas que 
-dos argumentos, tu funcion sirve para hacer demasiado. En otros casos, es mejor 
-refactorear y hacerlo on objeto para encapsular las funciones extras. 
+Limitar la cantidad de parámetros de tus funciones es increíblemente importante ya que hace que tus pruebas del código sean más fáciles. Al pasar los 3 argumentos, llegarás a un escenario de una explosión combinatoria en que hay que comprobar con pruebas muchos casos únicos con un argumento separado.
 
-Ya que JavaScript te deja crear objetos cuando quieras sin incorporar 
-la arquitectura de 'clases', se puede usar un objecto si necesitas muchos 
-argumentos.
+Uno o dos argumentos es la situación ideal, y más que eso uno debe evitar si es posible. Todo lo que se puede consolidar se debe consolidar. Normalmente, si tienes más que dos argumentos, tu función sirve para hacer demasiado. En otros casos, es mejor refactorizar y hacerlo un objeto para encapsular las funciones extras.
 
-Para hacerlo mas obvio cuales argumentos espera la funcion, se puede usar el syntaxo 
-de ES2015/ES6: 'destructurar'. Este sintaxo tiene varias ventajas: 
+Ya que JavaScript te deja crear objetos cuando quieras sin incorporar la arquitectura de 'clases', se puede usar un objeto si necesitas muchos argumentos.
 
-1. Cuando alguien se fija en el firme de la funcion, es imediatemente claro cuales 
-argumentos se usan. 
-2. Destructurar tambien copia los valores especificos y primitivos del
-objecto argumento que se le pasa a la funcion. Esto puede evitar los efectos extras. 
-Ojo: objectos y arrays que se destructuran del objeto argumento NO se copian.
-3. Los 'linters' te pueden avisar cuales argumentos / propedades no se usan, lo cual 
-seria imposible sin deestructurar.
+Para hacerlo más obvio cuáles argumentos espera la función, se puede usar el syntaxe de ES2015/ES6: 'destructurar'. Este syntaxe tiene varias ventajas:
+
+1. Cuando alguien se fija en el firme de la función, es inmediatamente claro cuáles argumentos se usan.
+2. Destructurar también copia los valores específicos y primitivos del objeto argumento que se le pasa a la función. Esto puede evitar los efectos extras. Ojo: objetos y arrays que se destructuran del objeto argumento NO se copian.
+3. Los 'linters' te pueden avisar cuales argumentos / propiedades no se usan, lo cual sería imposible sin deestructurar.
+
 
 **Mal hecho:**
 ```javascript
