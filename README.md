@@ -1906,12 +1906,12 @@ getdata()
 
 **[⬆ vuelve hasta arriba](#contenido)**
 
-
-## **Formatting**
-Formatting is subjective. Like many rules herein, there is no hard and fast
-rule that you must follow. The main point is DO NOT ARGUE over formatting.
-There are [tons of tools](http://standardjs.com/rules.html) to automate this.
-Use one! It's a waste of time and money for engineers to argue over formatting.
+## **Formatear**
+Formatear es subjetivo. Como muchas reglas en esta guia, no hay que seguirlas
+100%. El punto clave es: NO DISCUTAS sobre formatear. 
+Hay muchas [herramientas](http://standardjs.com/rules.html) para facilitar esto.
+Utiliza una! Te desperdicias de tu propio tiempo y el tiempo de los demas cuando 
+discutes sobre formatear.
 
 For things that don't fall under the purview of automatic formatting
 (indentation, tabs vs. spaces, double vs. single quotes, etc.) look here
@@ -2041,7 +2041,8 @@ review.perfReview();
 
 ## **Commentarios**
 ### Solo comentar las cosas que tienen logico complexo.
-Comments are an apology, not a requirement. Good code *mostly* documents itself.
+Los comentarios existen para pedir perdon, pero no son un requisito. 
+El codigo bueno *mas que nada* se documenta a si mismo.
 
 **Mal hecho:**
 ```javascript
@@ -2083,7 +2084,8 @@ function hashIt(data) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### No dejes codigo inutilizado en tus archivos 
-Version control exists for a reason. Leave old code in your history.
+El control de version existe para una razon. Deja el codigo viejo 
+en tu historia (git).
 
 **Mal hecho:**
 ```javascript
@@ -2100,8 +2102,9 @@ doStuff();
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### No escribas comentarios de jornada 
-Remember, use version control! There's no need for dead code, commented code,
-and especially journal comments. Use `git log` to get history!
+Ojo: utiliza el control de version (git)! No hay necesidad para el codigo no utilizado, 
+comentado, y especialmente comentarios de jornada. En cambio, utiliza 'git log' para 
+recuperar una historia de lo que has hecho.
 
 **Mal hecho:**
 ```javascript
@@ -2124,10 +2127,10 @@ function combine(a, b) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Avoid positional markers
-### Evitar 
-They usually just add noise. Let the functions and variable names along with the
-proper indentation and formatting give the visual structure to your code.
+### Evitar los marcadores posicionales
+Los marcadores posicionales suelen dificultar las cosas. Deja que las funciones,
+los nombres de tus variables, la indentacion adecuada y el formatear cree una estructura 
+visual a tu codigo.
 
 **Mal hecho:**
 ```javascript
