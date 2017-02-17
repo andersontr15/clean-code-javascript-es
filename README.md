@@ -97,7 +97,7 @@ saveCityZipCode(city, zipCode);
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Evitar el mapeo mental 
-El Explicito es mejor que el implicito.
+El explicito es mejor que el implicito.
 
 **Mal hecho:**
 ```javascript
@@ -573,17 +573,15 @@ const addItemToCart = (cart, item) => {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### No escribas hasta las funciones globales
-Polluting globals is a bad practice in JavaScript because you could clash with another
-library and the user of your API would be none-the-wiser until they get an
-exception in production. Let's think about an example: what if you wanted to
-extend JavaScript's native Array method to have a `diff` method that could
-show the difference between two arrays? You could write your new function
-to the `Array.prototype`, but it could clash with another library that tried
-to do the same thing. What if that other library was just using `diff` to find
-the difference between the first and last elements of an array? This is why it
-would be much better to just use ES2015/ES6 classes and simply extend the `Array` global.
 
-
+Polucionar las construciones globales no es buen costumbre en JavaScript 
+ya que se puede afrontar con otra biblioteca y el usuario de tu API no se daría 
+cuenta hasta que reciba una excepción cuando ya está en producción el codigo. Pensemos 
+en un ejemplo: que pasaria si quisieras extender los metodos nativos de la clase Array para 
+tener un metodo de 'diff' en que se podria mostrar la diferencia entre dos arrays?
+Podrias escribir una nueva función hasta el prototipo del `Array.prototype`, pero eso
+tambien podria causar problemas con otra biblioteca que contenía el metodo igual. 
+Bueno, que pasaria si la otra bibloteca solamente usaba 'diff' para averiguar la diferencia entre el primer elemento y el último elemento del array? Por eso hay que utilizar las clases de ES2015/ES5 y extender el global `Array`. 
 
 **Mal hecho:**
 ```javascript
@@ -707,19 +705,13 @@ if (isDOMNodePresent(node)) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Evitar condicionales
-This seems like an impossible task. Upon first hearing this, most people say,
-"how am I supposed to do anything without an `if` statement?" The answer is that
-you can use polymorphism to achieve the same task in many cases. The second
-question is usually, "well that's great but why would I want to do that?" The
-answer is a previous clean code concept we learned: a function should only do
-one thing. When you have classes and functions that have `if` statements, you
-are telling your user that your function does more than one thing. Remember,
-just do one thing.
-
 Este parece ser un reto imposible. Al escuchar esto por primera vez, 
 la mayoria de la gente dira: "como se supone que programo sin un 'if'?"
 Bueno, la respuesta es que puedes utilizar polymorfismo para lograr los 
-mismos retos en muchos escenarios. La segunda pregunta 
+mismos retos en muchos escenarios. La segunda pregunta suele ser: "bueno, eso está bien pero por qué voy a querer hacer eso?" La respuesta yace en un concepto anterior que ya hemos 
+aprendido: una función solo debe hacer una sola cosa. Cuando tienes clases y funciones 
+que contienen declaraciones de `if`, le dices al usuario que tu función hace más que una sola 
+cosa. Recuerda, solo haz una cosa.
 
 **Mal hecho:**
 ```javascript
@@ -768,10 +760,11 @@ class Cessna extends Airplane {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Evitar la comprobacion de tipos (parte 1)
-JavaScript is untyped, which means your functions can take any type of argument.
-Sometimes you are bitten by this freedom and it becomes tempting to do
-type-checking in your functions. There are many ways to avoid having to do this.
-The first thing to consider is consistent APIs.
+JavaScript es un idioma no tecleado, por lo cual significa que tus funciones
+pueden aceptar cualquier tipo de argumento. A veces te aprovechas de esta libertad
+y tienes ganas de hacer comprobación de `tipos` dentro de tus funciones. Hay muchas 
+maneras de evitar tener que hacer esto. La primeras cosas para considerar son APIs
+consistentes.
 
 **Mal hecho:**
 ```javascript
@@ -793,15 +786,10 @@ function travelToTexas(vehicle) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Evitar la comprobacion de tipos (parte 2)
-If you are working with basic primitive values like strings, integers, and arrays,
-and you can't use polymorphism but you still feel the need to type-check,
-you should consider using TypeScript. It is an excellent alternative to normal
-JavaScript, as it provides you with static typing on top of standard JavaScript
-syntax. The problem with manually type-checking normal JavaScript is that
-doing it well requires so much extra verbiage that the faux "type-safety" you get
-doesn't make up for the lost readability. Keep your JavaScript clean, write
-good tests, and have good code reviews. Otherwise, do all of that but with
-TypeScript (which, like I said, is a great alternative!).
+Si estas trabajando con los valores primitivos básicos como `strings`, enteros y arrays y que no puedes utilizar polimorfismo pero existe la necesidad de comprobar los `tipos`, debes
+considerar utilizando TypeScript. Es un alternativo excelente a JavaScript, y te provee con los tipos estaticos encima del sintaxis estándar de JavaScript. El problema con comprobar los tipos en JavaScript es que para hacerlo bien resulta en mucho mas verbaje que no vale la pena al lado de la legibilidad disminuida que viene a junto con esta solución. Intenta mantener limpio tu codigo de JavaScript, escribe buenas pruebas, y haz buenas revisiones de codigo.
+Eso dicho, haz todo lo de arriba pero con TypeScript (por lo cual, como dije, es buen alternativo).
+
 
 **Mal hecho:**
 ```javascript
@@ -823,12 +811,10 @@ function combine(val1, val2) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Don't over-optimize
-Modern browsers do a lot of optimization under-the-hood at runtime. A lot of
-times, if you are optimizing then you are just wasting your time. [There are good
-resources](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers)
-for seeing where optimization is lacking. Target those in the meantime, until
-they are fixed if they can be.
+### No optimices demasiado
+Los navegadores modernos hacen mucha optimización en el fondo a la hora de ejecutar.
+Muchas veces, malgastas tu tiempo si optimizas. [Hay buenos recursos para esto](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers) para ver donde carece de optimizar tu codigo. Enfocate en esos huecos donde puedes optimizar, hasta que se puedan 
+arreglar si es posible.
 
 **Mal hecho:**
 ```javascript
@@ -880,18 +866,18 @@ inventoryTracker('apples', req, 'www.inventory-awesome.io');
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ## **Objetos y estructuras de data**
-### Use getters and setters
-Using getters and setters to access data on objects could be better than simply
-looking for a property on an object. "Why?" you might ask. Well, here's an
-unorganized list of reasons why:
+### Utiliza `getters` y `setters`
+Utilizar los getters y setters parece aceder data dentro de los objetos 
+podria ser mejor que simplemente buscar una propiedad. "Por que?" Bueno, aqui 
+te dejo con una lista desorganizadas de las razones: 
 
-* When you want to do more beyond getting an object property, you don't have
-to look up and change every accessor in your codebase.
-* Makes adding validation simple when doing a `set`.
-* Encapsulates the internal representation.
-* Easy to add logging and error handling when getting and setting.
-* You can lazy load your object's properties, let's say getting it from a
-server.
+* Cuando quieres hacer algo más alla de aceder una propiedad de objeto, no tienes 
+que buscar todos los accesorios en tu programa.
+* Hace que implementar validación sea más facil cuando construyes un `set`
+* Encapsula la representación internal
+* Facilita la incorporación de apuntar errores de aceder y crear
+* Puedes cargar de `manera vaga` las propiedades del objeto, digamos de un servidor
+por ejemplo
 
 
 **Mal hecho:**
@@ -938,9 +924,8 @@ account.setBalance(100);
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-
-### Make objects have private members
-This can be accomplished through closures (for ES5 and below).
+### Has que los objetos tengan miembros privados
+Esto se puede lograr con `closures` (con ES5 y antes)
 
 **Mal hecho:**
 ```javascript
@@ -1055,11 +1040,10 @@ class Human extends Mammal {
 
 
 ### Utiliza la agregaccion de metodos
-This pattern is very useful in JavaScript and you see it in many libraries such
-as jQuery and Lodash. It allows your code to be expressive, and less verbose.
-For that reason, I say, use method chaining and take a look at how clean your code
-will be. In your class functions, simply return `this` at the end of every function,
-and you can chain further class methods onto it.
+Este modelo es muy util en JavaScript y puede que lo veas en muchas bibliotecas 
+como jQuery y Lodash. Tambien permite que tu codigo sea expresivo y menos verboso.
+Por eso, digo, utiliza el encadenamiento de metodos y hechale un vistazo a lo limpio 
+que llega a ser tu codigo. En tus funciones de clases, simplemente devuelve el `this` al final de cada función y asi puedes seguir encadenando los metodos de tu clase.
 
 **Mal hecho:**
 ```javascript
@@ -1136,23 +1120,18 @@ const car = new Car()
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Prefer composition over inheritance
-As stated famously in [*Design Patterns*](https://en.wikipedia.org/wiki/Design_Patterns) by the Gang of Four,
-you should prefer composition over inheritance where you can. There are lots of
-good reasons to use inheritance and lots of good reasons to use composition.
-The main point for this maxim is that if your mind instinctively goes for
-inheritance, try to think if composition could model your problem better. In some
-cases it can.
+### Prefiere composición en vez de la herencia 
+Como se ha dicho antes famosamente en el libro de [*Design Patterns*](https://en.wikipedia.org/wiki/Design_Patterns) escrito por el `Gang of Four`, debes preferir composición en vez de 
+la herencia cuando puedas. Hay muchas razones para utilizar estos dos modelos. El punto importante aqui es que tu mente naturalmente quiere utilizar la herencia, asi que intenta pensar si composición tambien podria resolver tu problema. En algunos casos, puede que sea la solución.
 
-You might be wondering then, "when should I use inheritance?" It
-depends on your problem at hand, but this is a decent list of when inheritance
-makes more sense than composition:
+Puede que te preguntes, "cuando deberia de utilizar la herencia?" Bueno, 
+depende de tu problema del momento, pero esta seria una lista decente de cuando 
+tiene más sentido utilizarla que la composición
 
-1. Your inheritance represents an "is-a" relationship and not a "has-a"
-relationship (Human->Animal vs. User->UserDetails).
-2. You can reuse code from the base classes (Humans can move like all animals).
-3. You want to make global changes to derived classes by changing a base class.
-(Change the caloric expenditure of all animals when they move).
+1. Tu herencia representa una relación de "es-un" y no un "tener-un" (Humano->Animal vs Usuario->Detalles del Usuario)
+2. Puedes reutilizar tu codigo de las clases bases (Los humanos pueden moverse como todos los animales)
+3. Quieres hacer cambios globales a las clases derivadas con cambiar una clase base.
+(Cambiar el gasto calorico de todos los animales cuando se mueven)
 
 **Mal hecho:**
 ```javascript
@@ -1346,19 +1325,15 @@ class HttpRequester {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Liskov Substitution Principle (LSP)
-This is a scary term for a very simple concept. It's formally defined as "If S
-is a subtype of T, then objects of type T may be replaced with objects of type S
-(i.e., objects of type S may substitute objects of type T) without altering any
-of the desirable properties of that program (correctness, task performed,
-etc.)." That's an even scarier definition.
+### El principio de sustitución de Liskov (LSP)
+Este es un termino espantoso para un concepto muy simple. Formalmente se define como 
+"Si S es un subtipo de T que los objetos de T se replazcan con los objetos de tipo S".
+(Es decir, los objetos de tipo S se pueden subsituir con los objetos de tipo T sin alterar 
+las propiedades desables del programa (precision, actuacion, etc.). Esa es una deficion aun mas espantosa.
 
-The best explanation for this is if you have a parent class and a child class,
-then the base class and child class can be used interchangeably without getting
-incorrect results. This might still be confusing, so let's take a look at the
-classic Square-Rectangle example. Mathematically, a square is a rectangle, but
-if you model it using the "is-a" relationship via inheritance, you quickly
-get into trouble.
+La mejor explanacion para este concepto es si tienes una clase `padre` y una clase `hijo`, 
+luego la clase base y la clase `hijo` se pueden utilizar intercambiablemente sin tener resultados que carecen de precisión. Puede que aun estas confundido, asi que miremos al modelo clasico de rectangulo-caudro. Matematicamente, un cuadro es un rectangulo, pero 
+si lo modelas como una relación de "es-un" con la herencia, te meterás en problemas rapidamente.
 
 **Mal hecho:**
 ```javascript
@@ -1461,20 +1436,18 @@ renderLargeShapes(shapes);
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Interface Segregation Principle (ISP)
-JavaScript doesn't have interfaces so this principle doesn't apply as strictly
-as others. However, it's important and relevant even with JavaScript's lack of
-type system.
+### El principio de segregación en cuanto a los interfaces (ISP)
+JavaScript no tiene interfaces asi que este principo no se aplica tanto como en otros 
+idiomas. Sin embargo, es importante y es relevante aunque JavaScript no tiene un sistema 
+de `tipos`.
 
-ISP states that "Clients should not be forced to depend upon interfaces that
-they do not use." Interfaces are implicit contracts in JavaScript because of
-duck typing.
+ISP declara que "Los clientes no se deben forzar para depender en interfaces que 
+no implementan". Los interfaces son contratos implicitos en JavaScript debido al `teclear de duck`.
 
-A good example to look at that demonstrates this principle in JavaScript is for
-classes that require large settings objects. Not requiring clients to setup
-huge amounts of options is beneficial, because most of the time they won't need
-all of the settings. Making them optional helps prevent having a
-"fat interface".
+Un buen ejemplo que demuestra este principio en JavaScript es para las clases que 
+necesitan objetos grandes de composición. Con no requerer que los clientes se encarguen 
+de muchas opciones, puedes beneficiar ya que la mayoria del tiempo no hace falta todo lo extra. Cuando haces que las opciones del contratos sean opcionales, evitas un "interfaz gordo"
+
 
 **Mal hecho:**
 ```javascript
@@ -1536,26 +1509,20 @@ const $ = new DOMTraverser({
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Dependency Inversion Principle (DIP)
-This principle states two essential things:
-1. High-level modules should not depend on low-level modules. Both should
-depend on abstractions.
-2. Abstractions should not depend upon details. Details should depend on
-abstractions.
+### El principio de inversión de las dependencias (DIP)
+Este principio declara dos cosas esenciales:
+1. Los modulos de nivel alto no debe dependerse en los modulos de nivel bajo.
+Los dos deben dependerse en las abstracciones.
+2. Las abstracciones no deben dependerse en las detalles. Las detalles deben
+dependerse en las abstracciones.
 
-This can be hard to understand at first, but if you've worked with AngularJS,
-you've seen an implementation of this principle in the form of Dependency
-Injection (DI). While they are not identical concepts, DIP keeps high-level
-modules from knowing the details of its low-level modules and setting them up.
-It can accomplish this through DI. A huge benefit of this is that it reduces
-the coupling between modules. Coupling is a very bad development pattern because
-it makes your code hard to refactor.
+Esto puede ser dificil de entender la primera vez, pero has trabajado con 
+AngularJS, has visto una implementación de este principio en la forma de la inyección de dependencias (DI). Mientras que no son conceptos identicales, el DIP mantiene que los modulos de nivel alto no sepan las detalles de los modulos de nivel bajo y tambien se encarga de ellos. Esto se puede conseguir con DI. Un beneficio enorme de esto es que reduce la convivencia entre los modulos. La conviencia es un modelo muy malo en cuanto al desarrollamiento de software ya que dificulta la posibilidad de refactorizar.
 
-As stated previously, JavaScript doesn't have interfaces so the abstractions
-that are depended upon are implicit contracts. That is to say, the methods
-and properties that an object/class exposes to another object/class. In the
-example below, the implicit contract is that any Request module for an
-`InventoryTracker` will have a `requestItems` method.
+Como se ha mencionado previamente, JavaScript no tiene interfaces asi que las abstracciones
+de las que se dependen son contratos implicitos. Es decir, los metodos and las propiedades 
+que un objeto/clase expone hasta otro objeto/calse. En el ejemplo más abajo, el contrato implicito es que cualquier modulo de Request que utilizar el `InventoryTracker` debe tener 
+un metodo de `requestItems`.
 
 **Mal hecho:**
 ```javascript
@@ -1631,24 +1598,17 @@ inventoryTracker.requestItems();
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-## **Testing**
-Testing is more important than shipping. If you have no tests or an
-inadequate amount, then every time you ship code you won't be sure that you
-didn't break anything. Deciding on what constitutes an adequate amount is up
-to your team, but having 100% coverage (all statements and branches) is how
-you achieve very high confidence and developer peace of mind. This means that
-in addition to having a great testing framework, you also need to use a
-[good coverage tool](http://gotwarlost.github.io/istanbul/).
+## **Comprobar**
+Comprobar nuestro codigo es mas importante que enviarlo. Si no tienes 
+pruebas o tienes una cantidad inadecuadas, cada vez que envias tu codigo tendras dudas en cuanto el saber de cuantos errores aun existen en tus programas. Dedicir en lo que constituye una cantidad adecuada es la responsabilidad del equipo, pero tener cuberatura 100% (todos las declaraciones y ramos) es como se logra una confianza alta y una tranquilidad de mente.
+Esto significa que encima de utilizar una estructura de pruebas, tambien necesitas usar 
+una [buena herramienta de coberatura](http://gotwarlost.github.io/istanbul/).
 
-There's no excuse to not write tests. There's [plenty of good JS test frameworks]
-(http://jstherightway.org/#testing-tools), so find one that your team prefers.
-When you find one that works for your team, then aim to always write tests
-for every new feature/module you introduce. If your preferred method is
-Test Driven Development (TDD), that is great, but the main point is to just
-make sure you are reaching your coverage goals before launching any feature,
-or refactoring an existing one.
+No existe excusa para no escribir pruebas. Hay [muchas estructuras buenas de pruebas para JS](http://jstherightway.org/#testing-tools), asi que busca una que le guste tu equipo. 
+Cuando encuentras una que tu equipo le gusta, enfocate en siempre escribir pruebas 
+para cada nueva caracteristica/modulo que introduces. Si tu metodo preferido es el Test Driven Development (TDD), eso está bien, pero el punto principal es que te aseguras de llegar a tus objetivos de cobertura antes de enviar el codigo o refactorizar una prueba ya existente.
 
-### Single concept per test
+### Un solo concepto cada prueba
 
 **Mal hecho:**
 ```javascript
@@ -1699,10 +1659,9 @@ describe('MakeMomentJSGreatAgain', () => {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-## **Concurrency**
-### Use Promises, not callbacks
-Callbacks aren't clean, and they cause excessive amounts of nesting. With ES2015/ES6,
-Promises are a built-in global type. Use them!
+## **Concurrencia**
+### Utiliza las promesa y no utilices los callbacks
+Los callbacks no son limpos y utilizan una cantidad excesiva de encajamiento. Con ES2015/ES6, las Promesas son un tipo ya nativo del idioma. Utilizalas!
 
 **Mal hecho:**
 ```javascript
@@ -1744,12 +1703,9 @@ get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin')
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Async/Await are even cleaner than Promises
-Promises are a very clean alternative to callbacks, but ES2017/ES8 brings async and await
-which offer an even cleaner solution. All you need is a function that is prefixed
-in an `async` keyword, and then you can write your logic imperatively without
-a `then` chain of functions. Use this if you can take advantage of ES2017/ES8 features
-today!
+### Async/Await son aun mas limpios que las Promesas
+Las Promesas son una alternativa muy limpia a los callbacks, pero ES2017/E8 incluye 
+async y await que ofrecen una solucion aun mas limpia. Todo lo que necesitas es una funcion que empieza con la palabra `async`, y luego puedes escribir tu logico imperativamente sin una fila de funciones de `then`. Utiliza esto si puedes aprovecharte de los beneficios de ES2017/E8 hoy!
 
 **Mal hecho:**
 ```javascript
@@ -1788,18 +1744,15 @@ async function getCleanCodeArticle() {
 
 
 ## **Resolver los errores**
-Los errores emergidos son buenos! Significan que tu ejecucion ha tenido 
+Los errores que emergen en tus programas son buenos! Significan que tu ejecucion ha tenido 
 exito a la hora de idetnificar un error en tu programa y te avisa con 
 detener la ejeucion del 'stack' actual, matando el proceso (en Node),
 y notificarte en el 'console' con un reporte de 'stack trace'
 
 ### No les ignores a los errores pillados
-Doing nothing with a caught error doesn't give you the ability to ever fix
-or react to said error. Logging the error to the console (`console.log`)
-isn't much better as often times it can get lost in a sea of things printed
-to the console. If you wrap any bit of code in a `try/catch` it means you
-think an error may occur there and therefore you should have a plan,
-or create a code path, for when it occurs.
+Hacer nada cuando existe un error pillado no te da la habilidad de arreglar o resolverlo.
+Apuntar el error al console (`console.log`) no es mucho mejor ya que muchas veces se puede perder en un mar de cosas que se apuntan al console. Si metes tu codigo en un `try/catch` significa que un error puede ocurrir alli y asi que deberias de tener un plan, o crear una solucion por si acaso.
+
 
 **Mal hecho:**
 ```javascript
@@ -1869,10 +1822,8 @@ discutes sobre formatear.
 Para las cosas que no tienen relevancia al formateo automatico (indentacion, tabulos vs espacios,
 quotaciones de doble vs single, etc.), busca aqui para aconsejarte.
 
-### Use consistent capitalization
-JavaScript is untyped, so capitalization tells you a lot about your variables,
-functions, etc. These rules are subjective, so your team can choose whatever
-they want. The point is, no matter what you all choose, just be consistent.
+### Utiliza capitalización consistente
+JavaScript es un idioma no tecleado, asi que la capitalización puede decirte muchas cosas sobre tus variables, funciones, etc. Estas reglas son subjetivas, asi que tu equipo puede escoger lo que quieran. El punto es, sin importar lo que escojas, se consistente.
 
 **Mal hecho:**
 ```javascript
@@ -1904,7 +1855,6 @@ class Animal {}
 class Alpaca {}
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
-
 
 ### Los llamadores y llamantes de las funciones deben ser cercas 
 Si una funcion le llama a otra, mantiene esa funcionas verticalmente cerca en 
