@@ -20,13 +20,13 @@ Repositorio original: [ryanmcdermott/clean-code-javascript](https://github.com/r
 ![Imagen gracioso de la estimacion de la calidad de software como una cifra 
 de cuantos expletivos que uno puede gritar al leer programas](http://www.osnews.com/images/comics/wtfm.jpg)
 
-Los principios de la ingeniería de software, del libro de Robert C. Martin [*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882), adaptado para JavaScript. Esta no es una guía de estilo, sino, es una guia para crear software que sea reutilizable, comprensible y que se pueda mejorar con el tiempo.
+Principios de la ingeniería de software, del libro de Robert C. Martin [*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882), adaptado para JavaScript. Esta no es una guía de estilo, en cambio, es una guía para crear software que sea reutilizable, comprensible y que se pueda mejorar con el tiempo.
 
-No hay que seguir tan estrictamente todos los principios en este libro, y vale la pena mencionar que hacia muchos habrá controversia en cuanto al consentimiento. Estas son estimaciones y nada mas, pero son estimaciones hechas después de muchos años de experiencia colectiva de los autores de *Clean Code*.
+No hay que seguir tan estrictamente todos los principios en este libro, y vale la pena mencionar que hacia muchos habrá controversia en cuanto su consentimiento. Estas son guías y nada mas, pero son guías hechas después de muchos años de experiencia colectiva de los autores de *Clean Code*.
 
-Nuestra obra de ingeniería de software lleva poco más que 50 años como negocio, y aún estamos aprendiendo. Cuando la arquitectura de software llegue a ser tan vieja como la arquitectura si misma, quizás tendremos reglas más estrictas a las que tenemos que adherir. Hasta entonces, dejemos que estas estimaciones sirvan como ejemplo para medir la calidad de nuestro código en JavaScript que tu y tu equipo producen.
+Nuestra obra de ingeniería de software lleva poco más que 50 años como negocio, y aún estamos aprendiendo. Cuando la arquitectura de software llegue a ser tan vieja como la arquitectura en sí misma, quizás tengamos reglas más estrictas a seguir. Hasta entonces, dejemos que estas guías sirvan como ejemplo para medir la calidad del código en JavaScript que tú y tu equipo producen.
 
-Una cosa más: el saber de que este libro no te hará inmediatamente un ingeniero mucho más mejor es importante, y tampoco lo de trabajar con estas herramientas durante muchos años no garantiza que usted no se equivoque nunca. Cada parte del código empieza como primer draft, como se moldea el clay hasta llegar a la forma final. Por fin, chisel amos las imperfecciones cuando lo repasamos con nuestros compañeros de trabajo. No seas tan duro contigo mismo para las etapas iniciales que necesitan mejoramiento. Trabaja más duro a mejorar el programa!
+Una cosa más: saber esto no te hará un mejor ingeniero inmediatamente, y tampoco trabajar con estas herramientas durante muchos años garantiza que nunca te equivocarás. Cualquier código empieza primero como un borrador, como arcilla mojada moldeandose en su forma final. Por último, arreglamos las imperfecciones cuando lo repasamos con nuestros compañeros de trabajo. No seas tan duro contigo mismo por los borradores iniciales que aún necesitan mejora. Trabaja más duro a mejorar el programa!
 
 ## **Variables**
 ### Utiliza nombres significativos y pronunciables para los variables
