@@ -933,7 +933,7 @@ account.setBalance(100);
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Has que los objetos tengan miembros privados
+### Haz que los objetos tengan miembros privados
 Esto se puede lograr con `closures` (con ES5 y antes)
 
 **Mal hecho:**
@@ -973,10 +973,8 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 
 ## **Clases**
 ### Prefiere ES2015/ES6 clases en vez de funciones normales de ES5
-It's very difficult to get readable class inheritance, construction, and method
-definitions for classical ES5 classes. If you need inheritance (and be aware
-that you might not), then prefer ES2015/ES6 classes. However, prefer small functions over
-classes until you find yourself needing larger and more complex objects.
+Es muy dificil para obtener una herencia legible de las clases, las construcción y 
+las definiciones de los métodos para las clases de ES5. Si necesitas la herencia (y puede que no la vayas a necesitar), entonces prefiere a las clases de ES2015/ES6. Sin embargo, prefiere funciones pequeñas hasta que necesites objetos más grandes y complejos.
 
 **Mal hecho:**
 ```javascript
