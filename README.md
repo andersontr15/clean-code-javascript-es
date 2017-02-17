@@ -6,7 +6,7 @@ Repositorio original: [ryanmcdermott/clean-code-javascript](https://github.com/r
   1. [Introducción](#introducción)
   2. [Variables](#variables)
   3. [Funciones](#funciones)
-  4. [Objetos y estructuras de data](#objectos-y-estructuras-de-data)
+  4. [Objetos y estructuras de data](#objetos-y-estructuras-de-data)
   5. [Clases](#clases)
   6. [SOLID](#solid)
   7. [Pruebas](#pruebas)
@@ -1953,7 +1953,7 @@ review.perfReview();
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ## **Commentarios**
-### Solo comentar las cosas que tienen logico complexo.
+### Solamente comenta las cosas que tienen lógico complejo.
 Los comentarios existen para pedir perdon, pero no son un requisito. 
 El codigo bueno *mas que nada* se documenta a si mismo.
 
