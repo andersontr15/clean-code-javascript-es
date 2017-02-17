@@ -220,7 +220,9 @@ createMenu({
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Las funciones deben existir para hacer una sola cosa 
+### Las funciones deben tener solo un nivel de abstracción
+
+
 Esta regla por mucho es la más importante en la ingeniería de software. Cuando las funciones sirven para hacer más que una sola cosa, se dificultan las pruebas, la composición y el entender. Cuando puedes isolar una función hasta tener solo una acción, se pueden mejorar más fácil y tu codigo llegue a ser mucho más limpio. Si solamente entiendes una cosa de esta guia, entiende esta reglas y estarás adelantado de muchos desarrolladores.
 
 **Mal hecho:**
@@ -1193,7 +1195,7 @@ class Employee {
 Como se menciona en *Clean Code*, "Nunca debe existir más que una sola razón para cambiar 
 una clase". Vale la pena decir que es normal querer llenar una 'clase' con muchas funciones, 
 igual que cuando solo te permiten llevar una maleta en el vuelo. El problema existe en que 
-tu 'clase' no estará cohesivo conceptualmente y le dara muchas razones para cambiarse.
+tu 'clase' no estará cohesiva conceptualmente y le dara muchas razones para cambiarse.
 Minimizar la cantidad de veces que necesitas cambiar una clase es importante. Es importante 
 ya que con demasiada funcionalidad viene dificultad de modificarlo y entender cómo afecta 
 a otros módulos dependientes en tu programa.
