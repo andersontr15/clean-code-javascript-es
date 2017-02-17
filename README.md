@@ -1711,7 +1711,7 @@ get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin')
 
 ### Async/Await son aún más limpios que las Promesas
 Las Promesas son una alternativa muy limpia a los callbacks, pero ES2017/E8 incluye 
-async y await que ofrecen una solución aún más limpia. Todo lo que necesitas es una función que empieza con la palabra `async`, y luego puedes escribir tu lógico imperativamente sin una fila de funciones de `then`. Utiliza esto si puedes aprovecharte de los beneficios de ES2017/E8 hoy!
+`async` y `await` que ofrecen una solución aún más limpia. Todo lo que necesitas es una función que empieza con la palabra `async`, y luego puedes escribir tu lógico imperativamente sin una fila de funciones de `then`. Utiliza esto si puedes aprovecharte de los beneficios de ES2017/E8 hoy!
 
 **Mal hecho:**
 ```javascript
