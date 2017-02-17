@@ -162,7 +162,7 @@ function pintarCoche(coche) {
 Los argumentos predefinidos muchas veces son más organizados que utilizar los condicionales.
 Se conciente que si tu los usas, tu función sólo tendrá valores para los argumentos de `undefined`.
 Los demás valores de 'falso' como `''`, `""`, `false`, `null`, `0`, y
-`NaN`, no se reemplazan con un valor original.
+`NaN`, no se reemplazan con un valor predefinido.
 
 **Mal hecho:**
 ```javascript
