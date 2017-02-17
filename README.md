@@ -1606,7 +1606,7 @@ inventoryTracker.requestItems();
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-## **Comprobar**
+## **Pruebas**
 Comprobar nuestro codigo es más importante que enviarlo. Si no tienes 
 pruebas o tienes una cantidad inadecuadas, cada vez que envías tu codigo tendras dudas en cuanto el saber de cuantos errores aún existen en tus programas. Deducir en lo que constituye una cantidad adecuada es la responsabilidad del equipo, pero tener cobertura 100% (todos las declaraciones y ramos) es como se logra una confianza alta y una tranquilidad de mente.
 Esto significa que encima de utilizar una estructura de pruebas, también necesitas usar 
