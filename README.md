@@ -1666,7 +1666,7 @@ describe('MakeMomentJSGreatAgain', () => {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ## **Concurrencia**
-### Utiliza las promesa y no utilices los callbacks
+### Utiliza las promesas y no utilices los callbacks
 Los callbacks no son limpos y utilizan una cantidad excesiva de encajamiento. Con ES2015/ES6, las Promesas son un tipo ya nativo del idioma. Utilizalas!
 
 **Mal hecho:**
