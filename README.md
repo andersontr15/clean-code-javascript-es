@@ -873,7 +873,7 @@ inventoryTracker('apples', req, 'www.inventory-awesome.io');
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ## **Objetos y estructuras de data**
-### Utiliza `getters` y `setters`
+### Utiliza getters y setters
 Utilizar los getters y setters parece acceder data dentro de los objetos 
 podría ser mejor que simplemente buscar una propiedad. "Por que?" Bueno, aqui 
 te dejo con una lista desorganizadas de las razones: 
@@ -1712,7 +1712,7 @@ get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin')
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Async/Await son aun mas limpios que las Promesas
+### Async/Await son aún más limpios que las Promesas
 Las Promesas son una alternativa muy limpia a los callbacks, pero ES2017/E8 incluye 
 async y await que ofrecen una solución aún más limpia. Todo lo que necesitas es una función que empieza con la palabra `async`, y luego puedes escribir tu lógico imperativamente sin una fila de funciones de `then`. Utiliza esto si puedes aprovecharte de los beneficios de ES2017/E8 hoy!
 
@@ -1809,13 +1809,13 @@ getdata()
     functionThatMightThrow(data);
   })
   .catch((error) => {
-    // One option (more noisy than console.log):
+     // Una opción (mas ruidoso que console.log):
     console.error(error);
-    // Another option:
+    // Otra opción:
     notifyUserOfError(error);
-    // Another option:
+    // Otra opción
     reportErrorToService(error);
-    // OR do all three!
+    // O haz las tres!
   });
 ```
 
@@ -1960,19 +1960,18 @@ El codigo bueno *mas que nada* se documenta a si mismo.
 **Mal hecho:**
 ```javascript
 function hashIt(data) {
-  // The hash
+  // El hash
   let hash = 0;
 
   // Length of string
   const length = data.length;
-
-  // Loop through every character in data
+  // Iterar cada caracter en la data
   for (let i = 0; i < length; i++) {
-    // Get character code.
+     // Conseguir el codigo del caracter
     const char = data.charCodeAt(i);
-    // Make the hash
+    // Crear el hash 
     hash = ((hash << 5) - hash) + char;
-    // Convert to 32-bit integer
+    // Conviertelo hasta 32-bit
     hash &= hash;
   }
 }
