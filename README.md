@@ -220,7 +220,7 @@ createMenu({
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Las funciones deben tener solo un nivel de abstracción
+### Las funciones deben tener una sola responsabilidad
 
 
 Esta regla por mucho es la más importante en la ingeniería de software. Cuando las funciones sirven para hacer más que una sola cosa, se dificultan las pruebas, la composición y el entender. Cuando puedes isolar una función hasta tener solo una acción, se pueden mejorar más fácil y tu codigo llegue a ser mucho más limpio. Si solamente entiendes una cosa de esta guia, entiende esta reglas y estarás adelantado de muchos desarrolladores.
