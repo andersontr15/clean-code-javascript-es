@@ -1863,7 +1863,7 @@ class Alpaca {}
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Los llamadores y llamantes de las funciones deben ser cercas 
+### Los llamadores y llamantes de las funciones deben existir cercas 
 Si una función le llama a otra, mantiene esa funcionas verticalmente cerca en 
 su archivo de fuente. Idealmente, mantiene el llamador justo encima del llamante.
 Solemos leer codigo arriba-abajo, como un periódico. Debido a esto, haz que tus programas sean legibles así.
