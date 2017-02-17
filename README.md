@@ -22,11 +22,11 @@ de cuantos expletivos que uno puede gritar al leer programas](http://www.osnews.
 
 Los principios de la ingeniería de software, del libro de Robert C. Martin [*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882), adaptado para JavaScript. Esta no es una guía de estilo, en cambio, es una guía para crear software que sea reutilizable, comprensible y que se pueda mejorar con el tiempo.
 
-No hay que seguir tan estrictamente todos los principios en este libro, y vale la pena mencionar que hacia muchos habrá controversia en cuanto su consentimiento. Estas son reflexiones hechas después de muchos años de experiencia colectiva de los autores de *Clean Code*.
+No hay que seguir tan estrictamente todos los principios en este libro, y vale la pena mencionar que hacia muchos de ellos habrá controversia en cuanto al consentimiento. Estas son reflexiones hechas después de muchos años de experiencia colectiva de los autores de *Clean Code*.
 
-Nuestra obra de ingeniería de software lleva poco más que 50 años como negocio, y aún estamos aprendiendo. Cuando la arquitectura de software llegue a ser tan vieja como la arquitectura en sí misma, quizás tengamos reglas más estrictas a seguir. Hasta entonces, dejemos que estas guías sirvan como ejemplo para medir la calidad del código en JavaScript que tú y tu equipo producen.
+Nuestra obra de ingeniería de software lleva poco más que 50 años como negocio, y aún estamos aprendiendo. Cuando la arquitectura de software llegue a ser tan vieja como la arquitectura en sí misma, quizás tengamos reglas más estrictas para seguir. Hasta entonces, dejemos que estas guías sirvan como ejemplo para medir la calidad del código en JavaScript que tú y tu equipo producen.
 
-Una cosa más: saber esto no te hará un mejor ingeniero inmediatamente, y tampoco trabajar con estas herramientas durante muchos años garantiza que nunca te equivocarás. Cualquier código empieza primero como un borrador, como arcilla mojada moldeandose en su forma final. Por último, arreglamos las imperfecciones cuando lo repasamos con nuestros compañeros de trabajo. No seas tan duro contigo mismo por los borradores iniciales que aún necesitan mejora. Trabaja más duro a mejorar el programa!
+Una cosa más: saber esto no te hará un mejor ingeniero inmediatamente, y tampoco trabajar con estas herramientas durante muchos años garantiza que nunca te equivocarás. Cualquier código empieza primero como un borrador, como arcilla mojada moldeandose en su forma final. Por último, arreglamos las imperfecciones cuando lo repasamos con nuestros compañeros de trabajo. No seas tan duro contigo mismo por los borradores iniciales que aún necesitan mejorar. Trabaja más duro para mejorar el programa!
 
 ## **Variables**
 ### Utiliza nombres significativos y pronunciables para los variables
@@ -129,7 +129,7 @@ ubicaciones.forEach((ubicacion) => {
 
 ### No incluyas contexto innecesario  
 Si tu clase / nombre tu objeto te dice algo, no lo repitas 
-en el nombre de variable tambien. 
+en el nombre de variable también. 
 
 **Mal hecho:**
 ```javascript
@@ -221,8 +221,6 @@ createMenu({
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Las funciones deben tener una sola responsabilidad
-
-
 Esta regla por mucho es la más importante en la ingeniería de software. Cuando las funciones sirven para hacer más que una sola cosa, se dificultan las pruebas, la composición y el entender. Cuando puedes isolar una función hasta tener solo una acción, se pueden mejorar más fácil y tu código llegue a ser mucho más limpio. Si solamente entiendes una cosa de esta guia, entiende esta reglas y estarás adelantado de muchos desarrolladores.
 
 **Mal hecho:**
@@ -278,8 +276,8 @@ addMonthToDate(1, date);
 
 ### Las funciones deben tener solo un nivel de abstracción 
 Cuando tienes más que un nivel de abstracción tu función suele servir 
-para hacer demasiado. Crear varias funciones más pequeñas se debe a mejor reutilizacion
-y comprobación más facil. 
+para hacer demasiado. Crear varias funciones más pequeñas se debe a mejor reutilización
+y comprobación más fácil. 
 
 **Mal hecho:**
 ```javascript
@@ -344,7 +342,7 @@ function parseBetterJSAlternative(code) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Eliminar código duplicado 
+### Eliminar el código duplicado 
 Haz tanto como puedas para evitar código duplicado. El código duplicado es malo ya que significa que hay varios lugares donde hay que actualizar algo si un cambio es necesario en tu logico.
 
 Imaginate que estas un restaurante y necesitas organizar tu inventario: todos tus tomates, cebolla, pimientos y tal. Si tienes varias listas donde organizas el inventario, cada lista se tendrá que actualizar en cuanto se baja tu inventario. En cambio, si logras tener una sola lista, solo se actualizará en un lugar a la hora de apuntar el inventario.
@@ -499,7 +497,7 @@ En cambio, crea un 'servicio' que se dedica a eso: uno y solo un servicio.
 El punto clave aquí es evitar las equivocaciones comunes como compartir 'estado' entre 
 objeto sin ninguna estructura, utilizar tipos de data mutables que se pueden escribir hasta 
 lo que sea, y no centralizar donde se ocurren los efectos extras. Si puedes conseguir esto, 
-seras más feliz que la mayoria de los demás programadores.
+serás más feliz que la mayoría de los demás programadores.
 
 
 **Mal hecho:**
@@ -577,8 +575,7 @@ const addItemToCart = (cart, item) => {
 
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### No escribas hasta las funciones globales
-
+### No intentes cambiar las funciones globales
 Polucionar las construcciones globales no es buen costumbre en JavaScript 
 ya que se puede afrontar con otra biblioteca y el usuario de tu API no se daría 
 cuenta hasta que reciba una excepción cuando ya está en producción el código. Pensemos 
@@ -586,7 +583,7 @@ en un ejemplo: que pasaría si quisieras extender los métodos nativos de la cla
 tener un método de 'diff' en que se podría mostrar la diferencia entre dos arrays?
 Podrías escribir una nueva función hasta el prototipo del `Array.prototype`, pero eso
 también podría causar problemas con otra biblioteca que contenía el método igual. 
-Bueno, qué pasaría si la otra biblioteca solamente usaba 'diff' para averiguar la diferencia entre el primer elemento y el último elemento del array? Por eso hay que utilizar las clases de ES2015/ES5 y extender el global `Array`. 
+Bueno, qué pasaría si la otra biblioteca solamente usaba 'diff' para averiguar la diferencia entre el primer elemento y el último elemento del array? Por eso hay que utilizar las clases de ES2015/ES6 y extender el global de `Array`. 
 
 
 **Mal hecho:**
@@ -665,7 +662,7 @@ const totalOutput = programmerOutput
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Encapsular condicionales
+### Encapsular los condicionales
 
 **Mal hecho:**
 ```javascript
@@ -686,7 +683,7 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Evitar condicionales negativas
+### Evitar los condicionales negativos
 
 **Mal hecho:**
 ```javascript
@@ -711,7 +708,7 @@ if (isDOMNodePresent(node)) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Evitar condicionales
+### Evitar los condicionales
 Esto parece ser un reto imposible. Al escuchar esto por primera vez, 
 la mayoría de la gente dirá: "como se supone que hago sin una declaración de 'if'?"
 Bueno, la respuesta es que puedes utilizar  para lograr los 
@@ -767,7 +764,7 @@ class Cessna extends Airplane {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Evitar la comprobacion de tipos (parte 1)
+### Evitar la comprobación de tipos (parte 1)
 JavaScript es un idioma no tecleado, por lo cual significa que tus funciones
 pueden aceptar cualquier tipo de argumento. A veces te aprovechas de esta libertad
 y tienes ganas de hacer comprobación de `tipos` dentro de tus funciones. Hay muchas 
@@ -843,7 +840,7 @@ for (let i = 0; i < list.length; i++) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Eliminar el código muerto
-El código muerto es tan elegante como el código duplicado. No hay razon 
+El código muerto es tan elegante como el código duplicado. No hay razón 
 para guardarlo. Si no se usa, eliminalo! Aun estara en tu historia del control versión
 si de verdad lo necesitas.
 
@@ -877,7 +874,7 @@ inventoryTracker('apples', req, 'www.inventory-awesome.io');
 ## **Objetos y estructuras de data**
 ### Utiliza getters y setters
 Utilizar los getters y setters para acceder data dentro de los objetos 
-puede ser mejor que simplemente buscar una propiedad. "Por que?" Bueno, aqui 
+puede ser mejor que simplemente buscar una propiedad. "Por qué?" Bueno, aquí 
 te dejo con una lista desorganizada de las razones: 
 
 * Cuando quieres hacer algo más allá de acceder una propiedad de objeto, no tienes 
@@ -973,7 +970,7 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 
 ## **Clases**
 ### Prefiere ES2015/ES6 clases en vez de funciones normales de ES5
-Es muy dificil para obtener una herencia legible de las clases, las construcción y 
+Es muy difícil para obtener una herencia legible de las clases, las construcción y 
 las definiciones de los métodos para las clases de ES5. Si necesitas la herencia (y puede que no la vayas a necesitar), entonces prefiere a las clases de ES2015/ES6. Sin embargo, prefiere funciones pequeñas hasta que necesites objetos más grandes y complejos.
 
 **Mal hecho:**
@@ -1336,11 +1333,12 @@ class HttpRequester {
 Este es un término espantoso para un concepto muy simple. Formalmente se define como 
 "Si S es un subtipo de T que los objetos de T se replazcan con los objetos de tipo S".
 (Es decir, los objetos de tipo S se pueden substituir con los objetos de tipo T sin alterar 
-las propiedades deseables del programa (precisión, actuación, etc.). Esa es una definición aún más espantosa.
+las propiedades deseables del programa (precisión, actuación, etc.). Esa si es una definición aún más espantosa.
 
 La mejor explanación para este concepto es si tienes una clase `padre` y una clase `hijo`, 
-luego la clase base y la clase `hijo` se pueden utilizar intercambiable mente sin tener resultados que carecen de precisión. Puede que aun estas confundido, así que miremos al modelo clásico de rectángulo-cuadro. Matemáticamente, un cuadro es un rectángulo, pero 
-si lo modelas como una relación de "es-un" con la herencia, te meterás en problemas rápidamente.
+luego la clase base y la clase `hijo` se pueden intercambiar sin tener resultados que carecen de precisión. 
+Puede que aun estas confundido, así que miremos al modelo clásico de rectángulo-cuadro. 
+Matemáticamente, un cuadro es un rectángulo, pero si lo modelas como una relación de "es-un" con la herencia, te meterás en problemas rápidamente.
 
 **Mal hecho:**
 ```javascript
@@ -1445,7 +1443,7 @@ renderLargeShapes(shapes);
 
 ### El principio de segregación en cuanto a los interfaces (ISP)
 JavaScript no tiene interfaces así que este principio no se aplica tanto como en otros 
-idiomas. Sin embargo, es importante y es relevante aunque JavaScript no tiene un sistema 
+idiomas. Sin embargo, es importante y es relevante aunque JavaScript no tenga un sistema 
 de `tipos`.
 
 ISP declara que "Los clientes no se deben forzar para depender en interfaces que 
@@ -1453,7 +1451,8 @@ no implementan". Los interfaces son contratos implícitos en JavaScript debido a
 
 Un buen ejemplo que demuestra este principio en JavaScript es para las clases que 
 necesitan objetos grandes de composición. Con no requerir que los clientes se encarguen 
-de muchas opciones, puedes beneficiar ya que la mayoría del tiempo no hace falta todo lo extra. Cuando haces que las opciones del contratos sean opcionales, evitas un "interfaz gordo"
+de muchas opciones, puedes beneficiar ya que la mayoría del tiempo no hace falta todo lo extra. 
+Cuando haces que las opciones del contratos sean opcionales, evitas un "interfaz gordo".
 
 
 **Mal hecho:**
@@ -1516,15 +1515,18 @@ const $ = new DOMTraverser({
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### El principio de inversión de las dependencias (DIP)
+### El principio de la inversión de las dependencias (DIP)
 Este principio declara dos cosas esenciales:
-1. Los módulos de nivel alto no debe depender en los módulos de nivel bajo.
-Los dos deben defenderse en las abstracciones.
-2. Las abstracciones no deben depender en las detalles. Las detalles deben
-defenderse en las abstracciones.
+1. Los módulos de nivel alto no deben depender en los módulos de nivel bajo.
+Los dos deben dependerse en las abstracciones.
+2. Las abstracciones no deben dependerse en las detalles. Las detalles deben
+dependerse en las abstracciones.
 
-Esto puede ser difícil de entender la primera vez, pero has trabajado con 
-AngularJS, has visto una implementación de este principio en la forma de la inyección de dependencias (DI). Mientras que no son conceptos idénticos, el DIP mantiene que los módulos de nivel alto no sepan las detalles de los módulos de nivel bajo y también se encarga de ellos. Esto se puede conseguir con DI. Un beneficio enorme de esto es que reduce la convivencia entre los módulos. La convivencia es un modelo muy malo en cuanto al desarrollamiento de software ya que dificulta la posibilidad de refactorizar.
+Esto ha de entender la primera vez, pero si has trabajado con 
+AngularJS, has visto una implementación de este principio en la forma de la inyección de dependencias (DI). 
+Mientras que no son conceptos idénticos, el DIP mantiene que los módulos de nivel alto no sepan las detalles de los módulos de nivel bajo y también se encarga de ellos. 
+Esto se puede conseguir con DI. Un beneficio enorme de esto es que reduce la convivencia entre los módulos. 
+La convivencia es un modelo muy malo en cuanto al desarrollamiento de software ya dificulta la posibilidad de refactorizar.
 
 Como se ha mencionado previamente, JavaScript no tiene interfaces asi que las abstracciones
 de las que se dependen son contratos implícitos. Es decir, los métodos y las propiedades 
@@ -1607,12 +1609,12 @@ inventoryTracker.requestItems();
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ## **Pruebas**
-Comprobar nuestro código es más importante que enviarlo. Si no tienes pruebas o tienes una cantidad inadecuada, cada vez que envías tu código tendras dudas en cuanto el saber de cuantos errores aún existen en tus programas. Deducir en lo que constituye una cantidad adecuada es la responsabilidad del equipo, pero tener cobertura 100% (todos las declaraciones y ramos) es como se logra una confianza alta y una tranquilidad de mente. Esto significa que encima de utilizar una estructura de pruebas, también necesitas usar una buena herramienta de cobertura.
+Comprobar nuestro código es más importante que enviarlo. Si no tienes pruebas o tienes una cantidad inadecuada, cada vez que envías tu código tendrás dudas en cuanto el saber de cuantos errores aún existen en tus programas. Deducir en lo que constituye una cantidad adecuada es la responsabilidad del equipo, pero tener cobertura 100% (todos las declaraciones y ramos) es como se logra una confianza alta y una tranquilidad de mente. Esto significa que encima de utilizar una estructura de pruebas, también necesitas usar una buena herramienta de cobertura.
 
 No existe excusa para no escribir pruebas. Hay muchas estructuras buenas de pruebas para JS, así que busca una que le guste tu equipo. Cuando encuentras una que tu equipo le gusta, enfócate en siempre escribir pruebas para cada nueva característica/módulo que introduces. Si tu método preferido es el Test Driven Development (TDD), eso está bien, pero el punto principal es que te aseguras de llegar a tus objetivos de cobertura antes de enviar el código o refactorizar una prueba ya existente.
 
 
-### Un solo concepto cada prueba
+### Un solo concepto para cada prueba
 
 **Mal hecho:**
 ```javascript
@@ -1827,7 +1829,7 @@ Para las cosas que no tienen relevancia al formateo automático (indentación, t
 quotaciones de doble vs single, etc.), busca aquí para aconsejarte.
 
 ### Utiliza capitalización consistente
-JavaScript es un idioma no tecleado, así que la capitalización puede decirte muchas cosas sobre tus variables, funciones, etc. Estas reglas son subjetivas, así que tu equipo puede escoger lo que quieran. El punto es, sin importar lo que escojas, se consistente.
+JavaScript es un idioma no tecleado, así que la capitalización puede decirte muchas cosas sobre tus variables, funciones, etc. Estas reglas son subjetivas, así que tu equipo puede escoger lo que quiera. El punto es, sin importar lo que escojas, se consistente.
 
 
 **Mal hecho:**
@@ -1949,7 +1951,7 @@ review.perfReview();
 
 ## **Commentarios**
 ### Solamente comenta las cosas que tienen lógico complejo.
-Los comentarios existen para pedir perdón, pero no son un requisito. El código bueno más que nada se documenta a sí mismo.
+Los comentarios existen para pedir perdón, pero no son un requisito. El código bueno más que nada se documenta sí mismo.
 
 **Mal hecho:**
 ```javascript
@@ -2035,8 +2037,8 @@ function combine(a, b) {
 
 ### Evitar los marcadores posicionales
 Los marcadores posicionales suelen dificultar las cosas. Deja que las funciones,
-los nombres de tus variables, la indentación adecuada y el formatear cree una estructura 
-visual a tu código.
+los nombres de tus variables, la indentación adecuada y el formatear creen una estructura 
+visual para tu código.
 
 **Mal hecho:**
 ```javascript
