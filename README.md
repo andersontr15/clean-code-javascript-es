@@ -158,8 +158,8 @@ function pintarCoche(coche) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Utiliza argumentos originales en vez de utilizar condicionales 
-Los argumentos originales muchas veces son más organizados que utilizar los condicionales.
+### Utiliza argumentos predefinidos en vez de utilizar condicionales 
+Los argumentos predefinidos muchas veces son más organizados que utilizar los condicionales.
 Se conciente que si tu los usas, tu función sólo tendrá valores para los argumentos de `undefined`.
 Los demás valores de 'falso' como `''`, `""`, `false`, `null`, `0`, y
 `NaN`, no se reemplazan con un valor original.
@@ -410,7 +410,7 @@ function showEmployeeList(employees) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Crear objetos originales con Object.assign
+### Crear objetos predefinidoss con Object.assign
 
 **Mal hecho:**
 ```javascript
