@@ -82,17 +82,17 @@ setTimeout(hastaLaInfinidadYMasAlla, MILISEGUNDOS_EN_UN_DIA);
 ### Utiliza variables explicativos
 **Mal hecho:**
 ```javascript
-const address = 'One Infinite Loop, Cupertino 95014';
-const cityZipCodeRegex = /^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/;
-saveCityZipCode(address.match(cityZipCodeRegex)[1], address.match(cityZipCodeRegex)[2]);
+const direccion = 'One Infinite Loop, Cupertino 95014';
+const codigoPostalRegex = /^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/;
+saveCityZipCode(direccion.match(codigoPostalRegex)[1], direccion.match(codigoPostalRegex)[2]);
 ```
 
 **Bien hecho:**
 ```javascript
-const address = 'One Infinite Loop, Cupertino 95014';
-const cityZipCodeRegex = /^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/;
-const [, city, zipCode] = address.match(cityZipCodeRegex) || [];
-saveCityZipCode(city, zipCode);
+const direccion = 'One Infinite Loop, Cupertino 95014';
+const codigoPostalRegex = /^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/;
+const [, ciudad, codigoPostal] = direccion.match(codigoPostalRegex) || [];
+guardarcodigoPostal(ciudad, codigoPostal);
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
@@ -133,27 +133,27 @@ en el nombre de variable también.
 
 **Mal hecho:**
 ```javascript
-const Car = {
-  carMake: 'Honda',
-  carModel: 'Accord',
-  carColor: 'Blue'
+const Coche = {
+  marca: 'Honda',
+  modelo: 'Accord',
+  color: 'Blue'
 };
 
-function paintCar(car) {
-  car.carColor = 'Red';
+function pintarCoche(coche) {
+  coche.color = 'Red';
 }
 ```
 
 **Bien hecho:**
 ```javascript
-const Car = {
-  make: 'Honda',
-  model: 'Accord',
+const Coche = {
+  marca: 'Honda',
+  modelo: 'Accord',
   color: 'Blue'
 };
 
-function paintCar(car) {
-  car.color = 'Red';
+function pintarCoche(coche) {
+  coche.color = 'Red';
 }
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
@@ -166,8 +166,8 @@ Los demás valores de 'falso' como `''`, `""`, `false`, `null`, `0`, y
 
 **Mal hecho:**
 ```javascript
-function createMicrobrewery(name) {
-  const breweryName = name || 'Hipster Brew Co.';
+function crearMicroCerveceria(nombre) {
+  const nombreDelMicroCerveceria = nombre || 'Hipster Brew Co.';
   // ...
 }
 
@@ -175,7 +175,7 @@ function createMicrobrewery(name) {
 
 **Bien hecho:**
 ```javascript
-function createMicrobrewery(breweryName = 'Hipster Brew Co.') {
+function crearMicroCerveceria(nombreDelMicroCerveceria = 'Hipster Brew Co.') {
   // ...
 }
 
@@ -200,22 +200,22 @@ Para hacerlo más obvio cuáles argumentos espera la función, se puede usar el 
 
 **Mal hecho:**
 ```javascript
-function createMenu(title, body, buttonText, cancellable) {
+function crearMenu(titulo, contexto, textoDelBoton, cancelable) {
   // ...
 }
 ```
 
 **Bien hecho:**
 ```javascript
-function createMenu({ title, body, buttonText, cancellable }) {
+function crearMenu({ titulo, contexto, textoDelBoton, cancelable }) {
   // ...
 }
 
-createMenu({
-  title: 'Foo',
-  body: 'Bar',
-  buttonText: 'Baz',
-  cancellable: true
+crearMenu({
+  titulo: 'Foo',
+  contexto: 'Bar',
+  textoDelBoton: 'Baz',
+  cancelable: true
 });
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
@@ -225,11 +225,11 @@ Esta regla por mucho es la más importante en la ingeniería de software. Cuando
 
 **Mal hecho:**
 ```javascript
-function emailClients(clients) {
-  clients.forEach((client) => {
-    const clientRecord = database.lookup(client);
-    if (clientRecord.isActive()) {
-      email(client);
+function escribirClientes(clients) {
+  clientes.forEach((cliente) => {
+    const recordDelCliente = database.busca(cliente);
+    if (recordDelCliente.esActivo()) {
+      escribir(cliente);
     }
   });
 }
@@ -237,15 +237,15 @@ function emailClients(clients) {
 
 **Bien hecho:**
 ```javascript
-function emailClients(clients) {
-  clients
-    .filter(isClientActive)
+function escribirClientes(clientes) {
+  clientes
+    .filter(esActivoElCliente)
     .forEach(email);
 }
 
-function isClientActive(client) {
-  const clientRecord = database.lookup(client);
-  return clientRecord.isActive();
+function esActivoElCliente(cliente) {
+  const recordDelCliente = database.busca(cliente);
+  return recordDelCliente.esActivo();
 }
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
@@ -254,23 +254,23 @@ function isClientActive(client) {
 
 **Mal hecho:**
 ```javascript
-function addToDate(date, month) {
+function adelantarLaFechaPorUnDia(fecha, mes) {
   // ...
 }
 
-const date = new Date();
+const fecha = new Date();
 // Es dificil entender del nombre lo que hace la función 
-addToDate(date, 1);
+adelantarLaFechaPorUnDia(date, 1);
 ```
 
 **Bien hecho:**
 ```javascript
-function addMonthToDate(month, date) {
+function agregarMesAlDia(mes, fecha) {
   // ...
 }
 
-const date = new Date();
-addMonthToDate(1, date);
+const fecha = new Date();
+agregarMesAlDia(1, fecha);
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
