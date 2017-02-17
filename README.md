@@ -1996,10 +1996,11 @@ en tu historia (git).
 
 **Mal hecho:**
 ```javascript
-doStuff();
-// doOtherStuff();
-// doSomeMoreStuff();
-// doSoMuchStuff();
+
+hazAlgo()
+// hazMasCosas();
+// hazAunMasCosas();
+// hazTantasOtrasCosas();
 ```
 
 **Bien hecho:**
@@ -2017,18 +2018,18 @@ recuperar una historia de lo que has hecho.
 ```javascript
 /**
  * 2016-12-20: Remover monads, no los entendia bien (RM)
- * 2016-10-01: Improved using special monads (JP)
- * 2016-02-03: Removed type-checking (LI)
- * 2015-03-14: Added combine with type-checking (JR)
+ * 2016-10-01: Mejorar utilizando los monads especiales (JP)
+ * 2016-02-03: Remover la comprobacion de tipos de data (LI)
+ * 2015-03-14: Agregar la funcion combinar (JR)
  */
-function combine(a, b) {
+function combinar(a, b) {
   return a + b;
 }
 ```
 
 **Bien hecho:**
 ```javascript
-function combine(a, b) {
+function combinar(a, b) {
   return a + b;
 }
 ```
@@ -2044,7 +2045,7 @@ visual para tu código.
 ////////////////////////////////////////////////////////////////////////////////
 // Instanciacion del modelo de Scope
 ////////////////////////////////////////////////////////////////////////////////
-$scope.model = {
+$scope.modelo = {
   menu: 'foo',
   nav: 'bar'
 };
@@ -2052,19 +2053,19 @@ $scope.model = {
 ////////////////////////////////////////////////////////////////////////////////
 // Iniciar de acciones 
 ////////////////////////////////////////////////////////////////////////////////
-const actions = function() {
+const acciones = function() {
   // ...
 };
 ```
 
 **Bien hecho:**
 ```javascript
-$scope.model = {
+$scope.modelo = {
   menu: 'foo',
   nav: 'bar'
 };
 
-const actions = function() {
+const acciones = function() {
   // ...
 };
 ```
