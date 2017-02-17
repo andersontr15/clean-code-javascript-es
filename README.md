@@ -885,7 +885,7 @@ qué buscar todos los accesorios en tu programa.
 * Hace que implementar validación sea más fácil cuando construyes un `set`
 * Encapsula la representación internal
 * Facilita la incorporación de apuntar errores de acceder y crear
-* Puedes cargar de `manera vaga` las propiedades del objeto, digamos de un servidor
+* Puedes cargar de manera vaga las propiedades del objeto, digamos de un servidor
 por ejemplo
 
 
