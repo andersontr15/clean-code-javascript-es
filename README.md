@@ -260,7 +260,7 @@ function adelantarLaFechaPorUnDia(fecha, mes) {
 
 const fecha = new Date();
 // Es dificil entender del nombre lo que hace la función 
-adelantarLaFechaPorUnDia(date, 1);
+adelantarLaFechaPorUnDia(fecha, 1);
 ```
 
 **Bien hecho:**
