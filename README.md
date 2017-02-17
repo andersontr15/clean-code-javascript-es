@@ -1954,8 +1954,7 @@ review.perfReview();
 
 ## **Commentarios**
 ### Solamente comenta las cosas que tienen lógico complejo.
-Los comentarios existen para pedir perdon, pero no son un requisito. 
-El codigo bueno *mas que nada* se documenta a si mismo.
+Los comentarios existen para pedir perdón, pero no son un requisito. El código bueno mas que nada se documenta a sí mismo.
 
 **Mal hecho:**
 ```javascript
