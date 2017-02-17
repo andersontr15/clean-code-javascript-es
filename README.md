@@ -10,7 +10,7 @@ Repositorio original: [ryanmcdermott/clean-code-javascript](https://github.com/r
   5. [Clases](#clases)
   6. [SOLID](#solid)
   7. [Pruebas](#pruebas)
-  8. [Concurrencia](#concucrencia)
+  8. [Concurrencia](#concurrencia)
   9. [Resolver los errores](#resolver-los-errores)
   10. [Formatear](#formatear)
   11. [Comentarios](#commentarios)
