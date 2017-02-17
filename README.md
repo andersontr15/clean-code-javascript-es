@@ -1983,7 +1983,6 @@ function hashIt(data) {
   for (let i = 0; i < length; i++) {
     const char = data.charCodeAt(i);
     hash = ((hash << 5) - hash) + char;
-    // Convertir a un integero 32-bit
     hash &= hash;
   }
 }
