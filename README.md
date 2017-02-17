@@ -874,7 +874,7 @@ inventoryTracker('apples', req, 'www.inventory-awesome.io');
 
 ## **Objetos y estructuras de data**
 ### Utiliza getters y setters
-Utilizar los getters y setters parece acceder data dentro de los objetos 
+Utilizar los getters y setters para acceder data dentro de los objetos 
 podría ser mejor que simplemente buscar una propiedad. "Por que?" Bueno, aqui 
 te dejo con una lista desorganizadas de las razones: 
 
