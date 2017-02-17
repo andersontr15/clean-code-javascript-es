@@ -412,7 +412,7 @@ function showEmployeeList(employees) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Crear objetos originales con `Object.assign`
+### Crear objetos originales con Object.assign
 
 **Mal hecho:**
 ```javascript
