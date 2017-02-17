@@ -1190,7 +1190,7 @@ class Employee {
 
 ## **SOLID**
 ### El principio único de responsabilidad (SRP)
-Como se menciona en Clean Code, "Nunca debe existir más que una sola razón para cambiar 
+Como se menciona en *Clean Code*, "Nunca debe existir más que una sola razón para cambiar 
 una clase". Vale la pena decir que es normal querer llenar una 'clase' con muchas funciones, 
 igual que cuando solo te permiten llevar una maleta en el vuelo. El problema existe en que 
 tu 'clase' no estará cohesivo conceptualmente y le dara muchas razones para cambiarse.
