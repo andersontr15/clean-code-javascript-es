@@ -59,7 +59,7 @@ conseguirUsuario();
 
 ### Utiliza nombres buscables 
 
-Nosotros leemos mucho más codigo que jamás escribiremos. Es importante que el código que escribimos sea legible y buscable. Cuando faltamos nombrar a los variables de manera buscable y legible, acabamos confundiendo a nuestros lectores. Hecha un vistazo a las herramientas para ayudarte: [buddy.js](https://github.com/danielstjules/buddy.js) and
+Nosotros leemos mucho más código que jamás escribiremos. Es importante que el código que escribimos sea legible y buscable. Cuando faltamos nombrar a los variables de manera buscable y legible, acabamos confundiendo a nuestros lectores. Hecha un vistazo a las herramientas para ayudarte: [buddy.js](https://github.com/danielstjules/buddy.js) and
 [ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md)
 
 **Mal hecho:**
@@ -223,7 +223,7 @@ createMenu({
 ### Las funciones deben tener una sola responsabilidad
 
 
-Esta regla por mucho es la más importante en la ingeniería de software. Cuando las funciones sirven para hacer más que una sola cosa, se dificultan las pruebas, la composición y el entender. Cuando puedes isolar una función hasta tener solo una acción, se pueden mejorar más fácil y tu codigo llegue a ser mucho más limpio. Si solamente entiendes una cosa de esta guia, entiende esta reglas y estarás adelantado de muchos desarrolladores.
+Esta regla por mucho es la más importante en la ingeniería de software. Cuando las funciones sirven para hacer más que una sola cosa, se dificultan las pruebas, la composición y el entender. Cuando puedes isolar una función hasta tener solo una acción, se pueden mejorar más fácil y tu código llegue a ser mucho más limpio. Si solamente entiendes una cosa de esta guia, entiende esta reglas y estarás adelantado de muchos desarrolladores.
 
 **Mal hecho:**
 ```javascript
@@ -261,7 +261,7 @@ function addToDate(date, month) {
 }
 
 const date = new Date();
-// Es dificil entender del nombre lo que hace la funcion 
+// Es dificil entender del nombre lo que hace la función 
 addToDate(date, 1);
 ```
 
@@ -276,10 +276,10 @@ addMonthToDate(1, date);
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Las funciones deben tener solo un nivel de abstraccion 
-Cuando tienes mas que un nivel de abstraccion tu funcion suele servir 
-para hacer demasiado. Crear varias funciones mas pequenas se debe a mejor reutilizacion
-y comprobacion mas facil. 
+### Las funciones deben tener solo un nivel de abstracción 
+Cuando tienes más que un nivel de abstracción tu función suele servir 
+para hacer demasiado. Crear varias funciones más pequeñas se debe a mejor reutilizacion
+y comprobación más facil. 
 
 **Mal hecho:**
 ```javascript
@@ -344,12 +344,12 @@ function parseBetterJSAlternative(code) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Eliminar codigo duplicado 
-Haz tanto como puedas para evitar codigo duplicado. El código duplicado es malo ya que significa que hay varios lugares donde hay que actualizar algo si un cambio es necesario en tu logico.
+### Eliminar código duplicado 
+Haz tanto como puedas para evitar código duplicado. El código duplicado es malo ya que significa que hay varios lugares donde hay que actualizar algo si un cambio es necesario en tu logico.
 
 Imaginate que estas un restaurante y necesitas organizar tu inventario: todos tus tomates, cebolla, pimientos y tal. Si tienes varias listas donde organizas el inventario, cada lista se tendrá que actualizar en cuanto se baja tu inventario. En cambio, si logras tener una sola lista, solo se actualizará en un lugar a la hora de apuntar el inventario.
 
-Muchas veces tienes codigo duplicado debido al tener dos o más cosas semejantes. Estos archivos comparten varias cosas, pero su diferencia te obliga separarlos para tener dos o más funciones que hacen cosas muy similares. Remover el código duplicado significa que se puede hacer la misma cosa que un solo función/módulo/clase.
+Muchas veces tienes código duplicado debido al tener dos o más cosas semejantes. Estos archivos comparten varias cosas, pero su diferencia te obliga separarlos para tener dos o más funciones que hacen cosas muy similares. Remover el código duplicado significa que se puede hacer la misma cosa que un solo función/módulo/clase.
 
 Obtener la abstracción correcta es crítica y por eso debes de adherir a los principios de SOLID que se explican en las sección de Clases. Las abstraciones males pueden ser aún peores que el código duplicado, así que ten cuidado! Es decir, si puedes hacer una buena abstracción, hazla! No te repitas, si no te darás cuenta de que andas actualizando mucho código en varios lugares a la hora de implementar un cambio.
 
@@ -499,7 +499,7 @@ En cambio, crea un 'servicio' que se dedica a eso: uno y solo un servicio.
 El punto clave aquí es evitar las equivocaciones comunes como compartir 'estado' entre 
 objeto sin ninguna estructura, utilizar tipos de data mutables que se pueden escribir hasta 
 lo que sea, y no centralizar donde se ocurren los efectos extras. Si puedes conseguir esto, 
-seras mas feliz que la mayoria de los demás programadores.
+seras más feliz que la mayoria de los demás programadores.
 
 
 **Mal hecho:**
@@ -821,7 +821,7 @@ function combine(val1, val2) {
 
 ### No optimices demasiado
 Los navegadores modernos hacen mucha optimización en el fondo a la hora de ejecutar.
-Muchas veces, malgastas tu tiempo si optimizas. [Hay buenos recursos para esto](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers) para ver donde carece de optimizar tu codigo. Enfócate en esos huecos donde puedes optimizar, hasta que se puedan 
+Muchas veces, malgastas tu tiempo si optimizas. [Hay buenos recursos para esto](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers) para ver donde carece de optimizar tu código. Enfócate en esos huecos donde puedes optimizar, hasta que se puedan 
 arreglar si es posible.
 
 **Mal hecho:**
@@ -1048,7 +1048,7 @@ class Human extends Mammal {
 
 ### Utiliza la agregación de métodos
 Este modelo es muy útil en JavaScript y puede que lo veas en muchas bibliotecas 
-como jQuery y Lodash. También permite que tu codigo sea expresivo y menos verboso.
+como jQuery y Lodash. También permite que tu código sea expresivo y menos verboso.
 Por eso, digo, utiliza el encadenamiento de métodos y échale un vistazo a lo limpio 
 que llega a ser tu código. En tus funciones de clases, simplemente devuelve el `this` al final de cada función y asi puedes seguir encadenando los metodos de tu clase.
 
@@ -1452,7 +1452,7 @@ ISP declara que "Los clientes no se deben forzar para depender en interfaces que
 no implementan". Los interfaces son contratos implícitos en JavaScript debido al `teclear de duck`.
 
 Un buen ejemplo que demuestra este principio en JavaScript es para las clases que 
-necesitan objetos grandes de composición. Con no requerer que los clientes se encarguen 
+necesitan objetos grandes de composición. Con no requerir que los clientes se encarguen 
 de muchas opciones, puedes beneficiar ya que la mayoría del tiempo no hace falta todo lo extra. Cuando haces que las opciones del contratos sean opcionales, evitas un "interfaz gordo"
 
 
@@ -1607,7 +1607,7 @@ inventoryTracker.requestItems();
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ## **Pruebas**
-Comprobar nuestro codigo es más importante que enviarlo. Si no tienes pruebas o tienes una cantidad inadecuada, cada vez que envías tu codigo tendras dudas en cuanto el saber de cuantos errores aún existen en tus programas. Deducir en lo que constituye una cantidad adecuada es la responsabilidad del equipo, pero tener cobertura 100% (todos las declaraciones y ramos) es como se logra una confianza alta y una tranquilidad de mente. Esto significa que encima de utilizar una estructura de pruebas, también necesitas usar una buena herramienta de cobertura.
+Comprobar nuestro código es más importante que enviarlo. Si no tienes pruebas o tienes una cantidad inadecuada, cada vez que envías tu código tendras dudas en cuanto el saber de cuantos errores aún existen en tus programas. Deducir en lo que constituye una cantidad adecuada es la responsabilidad del equipo, pero tener cobertura 100% (todos las declaraciones y ramos) es como se logra una confianza alta y una tranquilidad de mente. Esto significa que encima de utilizar una estructura de pruebas, también necesitas usar una buena herramienta de cobertura.
 
 No existe excusa para no escribir pruebas. Hay muchas estructuras buenas de pruebas para JS, así que busca una que le guste tu equipo. Cuando encuentras una que tu equipo le gusta, enfócate en siempre escribir pruebas para cada nueva característica/módulo que introduces. Si tu método preferido es el Test Driven Development (TDD), eso está bien, pero el punto principal es que te aseguras de llegar a tus objetivos de cobertura antes de enviar el código o refactorizar una prueba ya existente.
 
@@ -1804,7 +1804,7 @@ getdata()
     functionThatMightThrow(data);
   })
   .catch((error) => {
-     // Una opción (mas ruidoso que console.log):
+     // Una opción (más ruidoso que console.log):
     console.error(error);
     // Otra opción:
     notifyUserOfError(error);
@@ -1864,7 +1864,7 @@ class Alpaca {}
 ### Los llamadores y llamantes de las funciones deben existir cercas 
 Si una función le llama a otra, mantiene esa funcionas verticalmente cerca en 
 su archivo de fuente. Idealmente, mantiene el llamador justo encima del llamante.
-Solemos leer codigo arriba-abajo, como un periódico. Debido a esto, haz que tus programas sean legibles así.
+Solemos leer código arriba-abajo, como un periódico. Debido a esto, haz que tus programas sean legibles así.
 
 
 **Mal hecho:**
@@ -1949,7 +1949,7 @@ review.perfReview();
 
 ## **Commentarios**
 ### Solamente comenta las cosas que tienen lógico complejo.
-Los comentarios existen para pedir perdón, pero no son un requisito. El código bueno mas que nada se documenta a sí mismo.
+Los comentarios existen para pedir perdón, pero no son un requisito. El código bueno más que nada se documenta a sí mismo.
 
 **Mal hecho:**
 ```javascript
@@ -1961,7 +1961,7 @@ function hashIt(data) {
   const length = data.length;
   // Iterar cada caracter en la data
   for (let i = 0; i < length; i++) {
-     // Conseguir el codigo del caracter
+     // Conseguir el código del caracter
     const char = data.charCodeAt(i);
     // Crear el hash 
     hash = ((hash << 5) - hash) + char;
@@ -1989,7 +1989,7 @@ function hashIt(data) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### No dejes codigo inutilizado en tus archivos 
+### No dejes código inutilizado en tus archivos 
 El control de versión existe para una razón. Deja el código viejo 
 en tu historia (git).
 
@@ -2036,7 +2036,7 @@ function combine(a, b) {
 ### Evitar los marcadores posicionales
 Los marcadores posicionales suelen dificultar las cosas. Deja que las funciones,
 los nombres de tus variables, la indentación adecuada y el formatear cree una estructura 
-visual a tu codigo.
+visual a tu código.
 
 **Mal hecho:**
 ```javascript
