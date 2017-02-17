@@ -531,7 +531,7 @@ console.log(newName); // ['Ryan', 'McDermott'];
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Evitar los efectos extra(parte 2)
+### Evitar los efectos extras(parte 2)
 En JavaScript, los primitivos se pasan por valores y los objetos/arrays se
 pasan por referencia. En el caso de los objetos y los array, si tu función 
 hace un cambio en la shopping cart array, por ejemplo, con agregar una cosa a 
