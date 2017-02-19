@@ -1822,7 +1822,7 @@ getdata()
 Formatear es subjetivo. Como muchas reglas en esta guía, no hay que seguirlas
 100%. El punto clave es: NO DISCUTAS sobre formatear. 
 Hay muchas [herramientas](http://standardjs.com/rules.html) para facilitar esto.
-Utiliza una! Te desperdicias de tu propio tiempo y el tiempo de los demás cuando 
+Utiliza una de estas herramientas! Te desperdicias de tu propio tiempo y el tiempo de los demás cuando 
 discuten sobre formatear.
 
 Para las cosas que no tienen relevancia al formateo automático (indentación, tabulos y espacios,
