@@ -134,13 +134,13 @@ en el nombre de variable también.
 **Mal hecho:**
 ```javascript
 const Coche = {
-  marca: 'Honda',
-  modelo: 'Accord',
-  color: 'Blue'
+  cocheMarca: 'Honda',
+  cocheModelo: 'Accord',
+  cocheColor: 'Blue'
 };
 
 function pintarCoche(coche) {
-  coche.color = 'Red';
+  coche.cocheColor = 'Red';
 }
 ```
 
