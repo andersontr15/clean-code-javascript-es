@@ -13,7 +13,7 @@ Repositorio original: [ryanmcdermott/clean-code-javascript](https://github.com/r
   8. [Concurrencia](#concurrencia)
   9. [Resolver los errores](#resolver-los-errores)
   10. [Formatear](#formatear)
-  11. [Comentarios](#commentarios)
+  11. [Comentarios](#comentarios)
 
 ## Introducción
 
@@ -26,10 +26,10 @@ No hay que seguir tan estrictamente todos los principios en este libro, y vale l
 
 Nuestra obra de ingeniería de software lleva poco más que 50 años como negocio, y aún estamos aprendiendo. Cuando la arquitectura de software llegue a ser tan vieja como la arquitectura en sí misma, quizás tengamos reglas más estrictas para seguir. Hasta entonces, dejemos que estas guías sirvan como ejemplo para medir la calidad del código en JavaScript que tú y tu equipo producen.
 
-Una cosa más: saber esto no te hará un mejor ingeniero inmediatamente, y tampoco trabajar con estas herramientas durante muchos años garantiza que nunca te equivocarás. Cualquier código empieza primero como un borrador, como arcilla mojada moldeandose en su forma final. Por último, arreglamos las imperfecciones cuando lo repasamos con nuestros compañeros de trabajo. No seas tan duro contigo mismo por los borradores iniciales que aún necesitan mejorar. Trabaja más duro para mejorar el programa!
+Una cosa más: saber esto no te hará un mejor ingeniero inmediatamente, y tampoco trabajar con estas herramientas durante muchos años garantiza que nunca te equivocarás. Cualquier código empieza primero como un borrador, como arcilla mojada moldeándose en su forma final. Por último, arreglamos las imperfecciones cuando lo repasamos con nuestros compañeros de trabajo. No seas tan duro contigo mismo por los borradores iniciales que aún necesitan mejorar. ¡Trabaja más duro para mejorar el programa!
 
 ## **Variables**
-### Utiliza nombres significativos y pronunciables para los variables
+### Utiliza nombres significativos y pronunciables para las variables
 
 **Mal hecho:**
 ```javascript
@@ -59,7 +59,7 @@ conseguirUsuario();
 
 ### Utiliza nombres buscables 
 
-Nosotros leemos mucho más código que jamás escribiremos. Es importante que el código que escribimos sea legible y buscable. Cuando faltamos nombrar a los variables de manera buscable y legible, acabamos confundiendo a nuestros lectores. Hecha un vistazo a las herramientas para ayudarte: [buddy.js](https://github.com/danielstjules/buddy.js) and
+Nosotros leemos mucho más código que jamás escribiremos. Es importante que el código que escribimos sea legible y buscable. Cuando faltamos nombrar a los variables de manera buscable y legible, acabamos confundiendo a nuestros lectores. Echa un vistazo a las herramientas para ayudarte: [buddy.js](https://github.com/danielstjules/buddy.js) and
 [ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md)
 
 **Mal hecho:**
@@ -79,7 +79,7 @@ setTimeout(hastaLaInfinidadYMasAlla, MILISEGUNDOS_EN_UN_DIA);
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Utiliza variables explicativos
+### Utiliza variables explicativas
 **Mal hecho:**
 ```javascript
 const direccion = 'One Infinite Loop, Cupertino 95014';
@@ -160,7 +160,7 @@ function pintarCoche(coche) {
 
 ### Utiliza argumentos predefinidos en vez de utilizar condicionales 
 Los argumentos predefinidos muchas veces son más organizados que utilizar los condicionales.
-Se conciente que si tu los usas, tu función sólo tendrá valores para los argumentos de `undefined`.
+Se consciente que si tú los usas, tu función sólo tendrá valores para los argumentos de `undefined`.
 Los demás valores de 'falso' como `''`, `""`, `false`, `null`, `0`, y
 `NaN`, no se reemplazan con un valor predefinido.
 
@@ -191,11 +191,11 @@ Uno o dos argumentos es la situación ideal, y más que eso uno debe evitar si e
 
 Ya que JavaScript te deja crear objetos cuando quieras sin incorporar la arquitectura de 'clases', se puede usar un objeto si necesitas muchos argumentos.
 
-Para hacerlo más obvio cuáles argumentos espera la función, se puede usar el syntaxe de ES2015/ES6: 'destructurar'. Este syntaxe tiene varias ventajas:
+Para hacerlo más obvio cuáles argumentos espera la función, se puede usar la sintaxis de ES2015/ES6: 'destructuración'. Esta sintaxis tiene varias ventajas:
 
 1. Cuando alguien se fija en el firme de la función, es inmediatamente claro cuáles argumentos se usan.
-2. Destructurar también copia los valores específicos y primitivos del objeto argumento que se le pasa a la función. Esto puede evitar los efectos extras. Ojo: objetos y arrays que se destructuran del objeto argumento NO se copian.
-3. Los 'linters' te pueden avisar cuales argumentos / propiedades no se usan, lo cual sería imposible sin deestructurar.
+2. Destructurar también copia los valores específicos y primitivos del objeto argumento que se le pasa a la función. Esto puede evitar los efectos extras. Ojo: objetos y arreglos que se destructuran del objeto argumento NO se copian.
+3. Los 'linters' te pueden avisar cuales argumentos / propiedades no se usan, lo cual sería imposible sin destructurar.
 
 
 **Mal hecho:**
@@ -221,7 +221,7 @@ crearMenu({
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Las funciones deben tener una sola responsabilidad
-Esta regla por mucho es la más importante en la ingeniería de software. Cuando las funciones sirven para hacer más que una sola cosa, se dificultan las pruebas, la composición y el entender. Cuando puedes isolar una función hasta tener solo una acción, se pueden mejorar más fácil y tu código llegue a ser mucho más limpio. Si solamente entiendes una cosa de esta guia, entiende esta reglas y estarás adelantado de muchos desarrolladores.
+Esta regla por mucho es la más importante en la ingeniería de software. Cuando las funciones sirven para hacer más que una sola cosa, se dificultan las pruebas, la composición y el entender. Cuando puedes aislar una función hasta tener solo una acción, se pueden mejorar más fácil y tu código llegue a ser mucho más limpio. Si solamente entiendes una cosa de esta guía, entiende esta regla y estarás adelantado de muchos desarrolladores.
 
 **Mal hecho:**
 ```javascript
@@ -259,7 +259,7 @@ function adelantarLaFechaPorUnDia(fecha, mes) {
 }
 
 const fecha = new Date();
-// Es dificil entender del nombre lo que hace la función 
+// Es difícil entender del nombre lo que hace la función 
 adelantarLaFechaPorUnDia(fecha, 1);
 ```
 
@@ -343,13 +343,13 @@ function parseBetterJSAlternative(code) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Eliminar el código duplicado 
-Haz tanto como puedas para evitar código duplicado. El código duplicado es malo ya que significa que hay varios lugares donde hay que actualizar algo si un cambio es necesario en tu logico.
+Haz tanto como puedas para evitar código duplicado. El código duplicado es malo ya que significa que hay varios lugares donde hay que actualizar algo si un cambio es necesario en tu lógico.
 
 Imagínate que estás en un restaurante y necesitas organizar tu inventario: todos tus tomates, cebolla, pimientos y tal. Si tienes varias listas donde organizas el inventario, cada lista se tendrá que actualizar en cuanto se baja tu inventario. En cambio, si logras tener una sola lista, solo se actualizará en un lugar a la hora de apuntar el inventario.
 
 Muchas veces tienes código duplicado se debe al hecho de tener dos o más cosas semejantes. Estos archivos pueden comparten varias cosas, pero sus diferencias te obligan separarlos para tener dos o más funciones que hacen cosas muy similares. Remover el código duplicado significa que se puede hacer la misma cosa que un solo función/módulo/clase.
 
-Obtener la abstracción correcta es crítica y por eso debes de adherir a los principios de SOLID que se explican en las sección de Clases. Las abstraciones males pueden ser aún peores que el código duplicado, así que ten cuidado! Es decir, si puedes hacer una buena abstracción, hazla! No te repitas, si no te darás cuenta de que andas actualizando mucho código en varios lugares a la hora de implementar un cambio.
+Obtener la abstracción correcta es crítica y por eso debes de adherir a los principios de SOLID que se explican en la sección de Clases. Las malas abstracciones pueden ser aún peores que el código duplicado, ¡así que ten cuidado! Es decir, si puedes hacer una buena abstracción, ¡hazla! No te repitas, si no te darás cuenta de que andas actualizando mucho código en varios lugares a la hora de implementar un cambio.
 
 
 **Mal hecho:**
@@ -410,7 +410,7 @@ function showEmployeeList(employees) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Crear objetos predefinidoss con Object.assign
+### Crear objetos predefinidos con Object.assign
 
 **Mal hecho:**
 ```javascript
@@ -435,7 +435,7 @@ createMenu(menuConfig);
 ```javascript
 const menuConfig = {
   title: 'Order',
-  // El usuario no tenia la clave 'body'
+  // El usuario no tenía la clave 'body'
   buttonText: 'Send',
   cancellable: true
 };
@@ -534,9 +534,9 @@ En JavaScript, los primitivos se pasan por valores y los objetos/arrays se
 pasan por referencia. En el caso de los objetos y los array, si tu función 
 hace un cambio en la shopping cart array, por ejemplo, con agregar una cosa a 
 la hora de comprar, resulta que todas las demás funciones que utilizan este array 
-estaran afectadas. Esto puede ser bueno o malo. Imaginemos una situación mala:
+estarán afectadas. Esto puede ser bueno o malo. Imaginemos una situación mala:
 
-El usuario le da clik a "Comprar", un botón que invoca la función de "comprar".
+El usuario le da click a "Comprar", un botón que invoca la función de "comprar".
 Esta función hace una solicitud del red y envía el array de 'cart' hasta el servidor.
 Debido a la conexión mala del red, la función sigue intentando invocarse para mandar 
 la solicitud. Ahora, que pasa mientras tanto cuando el usuario le da click otra vez 
@@ -546,16 +546,16 @@ mandara sin querer la cosa que estaba agregada accidentalmente ya que tiene una
 referencia al array de 'shopping cart' que la función 'addItemToCart' modifico 
 con agregar una cosa no deseada.
 
-Una buena solucion seria que la función 'addItemToCart' siempre copiara la 'carta',
+Una buena solución seria que la función 'addItemToCart' siempre copiara la 'carta',
 editarla, y devolvérsela a la copia. Esto asegura que ninguna otra función relacionada 
 se afectará por estos cambios.
 
 Dos cosas para mencionar con esta solución:
   1. Puede que existan escenarios donde de verdad quieres modificar el objeto de input, 
   pero cuando adoptas esta práctica de programar, te darás cuentas de que estos casos son 
-  bastante unicos.
+  bastante únicos.
   2. Copiar objetos grandes pueden ser muy caros en cuanto a la velocidad y calidad de tu programa.
-  Fortunadamente, no hay mucho problema con esto ya que existen muchas [recursos](https://facebook.github.io/immutable-js/)
+  Afortunadamente, no hay mucho problema con esto ya que existen muchas [recursos](https://facebook.github.io/immutable-js/)
   que nos dejan lograr el copiar de objetos y arrays sin perder actuación.
 
 
@@ -583,7 +583,7 @@ en un ejemplo: que pasaría si quisieras extender los métodos nativos de la cla
 tener un método de 'diff' en que se podría mostrar la diferencia entre dos arrays?
 Podrías escribir una nueva función hasta el prototipo del `Array.prototype`, pero eso
 también podría causar problemas con otra biblioteca que contenía el método igual. 
-Bueno, qué pasaría si la otra biblioteca solamente usaba 'diff' para averiguar la diferencia entre el primer elemento y el último elemento del array? Por eso hay que utilizar las clases de ES2015/ES6 y extender el global de `Array`. 
+Bueno, ¿qué pasaría si la otra biblioteca solamente usaba ‘diff’ para averiguar la diferencia entre el primer elemento y el último elemento del array? Por eso hay que utilizar las clases de ES2015/ES6 y extender el global de `Array`. 
 
 
 **Mal hecho:**
@@ -712,7 +712,7 @@ if (isDOMNodePresent(node)) {
 Esto parece ser un reto imposible. Al escuchar esto por primera vez, 
 la mayoría de la gente dirá: "como se supone que hago sin una declaración de 'if'?"
 Bueno, la respuesta es que puedes utilizar  para lograr los 
-mismos retos en muchos escenarios. La segunda pregunta suele ser: "bueno, eso está bien pero por qué voy a querer hacer eso?" La respuesta yace en un concepto anterior que ya hemos 
+mismos retos en muchos escenarios. La segunda pregunta suele ser: "bueno, eso está bien, pero por qué voy a querer hacer eso?" La respuesta yace en un concepto anterior que ya hemos 
 aprendido: una función solo debe hacer una sola cosa. Cuando tienes clases y funciones 
 que contienen declaraciones de `if`, le dices al usuario que tu función hace más que una sola 
 cosa. Recuerda, solo haz una cosa.
@@ -791,9 +791,9 @@ function travelToTexas(vehicle) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Evitar la comprobación de tipos (parte 2)
-Si estás trabajando con los valores primitivos básicos como `strings`, enteros y arrays y que no puedes utilizar polimorfismo pero existe la necesidad de comprobar los `tipos`, debes
+Si estás trabajando con los valores primitivos básicos como `strings`, enteros y arrays y que no puedes utilizar polimorfismo, pero existe la necesidad de comprobar los `tipos`, debes
 considerar utilizando TypeScript. Es un alternativo excelente a JavaScript, y te provee con los tipos estáticos encima del sintaxis estándar de JavaScript. El problema con comprobar los tipos en JavaScript es que para hacerlo bien resulta en mucho más verbos que no vale la pena al lado de la legibilidad disminuida que viene a junto con esta solución. Intenta mantener limpio tu código de JavaScript, escribe buenas pruebas, y haz buenas revisiones de código.
-Eso dicho, haz todo lo de arriba pero con TypeScript (por lo cual, como dije, es buen alternativo).
+Eso dicho, haz todo lo de arriba, pero con TypeScript (por lo cual, como dije, es buen alternativo).
 
 
 **Mal hecho:**
@@ -841,7 +841,7 @@ for (let i = 0; i < list.length; i++) {
 
 ### Eliminar el código muerto
 El código muerto es tan elegante como el código duplicado. No hay razón 
-para guardarlo. Si no se usa, eliminalo! Aun estara en tu historia del control versión
+para guardarlo. Si no se usa, ¡elimínalo! Aun estará en tu historia del control versión
 si de verdad lo necesitas.
 
 
@@ -1126,9 +1126,9 @@ const car = new Car()
 
 ### Prefiere composición en vez de la herencia 
 Como se ha dicho antes famosamente en el libro de [*Design Patterns*](https://en.wikipedia.org/wiki/Design_Patterns) escrito por el `Gang of Four`, debes preferir composición en vez de 
-la herencia cuando puedas. Hay muchas razones para utilizar estos dos modelos. El punto importante aquí es que tu mente naturalmente quiere utilizar la herencia, así que intenta pensar si composicion tambien podria resolver tu problema. En algunos casos, puede que sea la solución.
+la herencia cuando puedas. Hay muchas razones para utilizar estos dos modelos. El punto importante aquí es que tu mente naturalmente quiere utilizar la herencia, así que intenta pensar si composición también podría resolver tu problema. En algunos casos, puede que sea la solución.
 
-Puede que te preguntes, "cuando debería de utilizar la herencia?" Bueno, 
+Puede que te preguntes, ¿”cuando debería de utilizar la herencia?" Bueno, 
 depende de tu problema del momento, pero esta sería una lista decente de cuando 
 tiene más sentido utilizarla que la composición
 
@@ -1244,7 +1244,7 @@ class UserSettings {
 
 ### Principio de abierto/cerrado (OCP)
 Como dijo Bertrand Meyer, "las entidades de software (clases, módulos, funciones, etc.)
-deben abrirse para extensión, pero cerrarse para modificación. Que significa eso? 
+deben abrirse para extensión, pero cerrarse para modificación. ¿Qué significa eso? 
 Bueno, este principio básicamente nos dice que debes permitir que tus usuarios 
 introduzcan nuevas funcionalidades sin cambiar el código existente.
 
@@ -1331,7 +1331,7 @@ class HttpRequester {
 
 ### El principio de sustitución de Liskov (LSP)
 Este es un término espantoso para un concepto muy simple. Formalmente se define como 
-"Si S es un subtipo de T que los objetos de T se replazcan con los objetos de tipo S".
+"Si S es un subtipo de T que los objetos de T se reemplazan con los objetos de tipo S".
 (Es decir, los objetos de tipo S se pueden substituir con los objetos de tipo T sin alterar 
 las propiedades deseables del programa (precisión, actuación, etc.). Esa si es una definición aún más espantosa.
 
@@ -1443,7 +1443,7 @@ renderLargeShapes(shapes);
 
 ### El principio de segregación en cuanto a los interfaces (ISP)
 JavaScript no tiene interfaces así que este principio no se aplica tanto como en otros 
-idiomas. Sin embargo, es importante y es relevante aunque JavaScript no tenga un sistema 
+idiomas. Sin embargo, es importante y es relevante, aunque JavaScript no tenga un sistema 
 de `tipos`.
 
 ISP declara que "Los clientes no se deben forzar para depender en interfaces que 
@@ -1526,12 +1526,12 @@ Esto ha de entender la primera vez, pero si has trabajado con
 AngularJS, has visto una implementación de este principio en la forma de la inyección de dependencias (DI). 
 Mientras que no son conceptos idénticos, el DIP mantiene que los módulos de nivel alto no sepan las detalles de los módulos de nivel bajo y también se encarga de ellos. 
 Esto se puede conseguir con DI. Un beneficio enorme de esto es que reduce la convivencia entre los módulos. 
-La convivencia es un modelo muy malo en cuanto al desarrollamiento de software ya dificulta la posibilidad de refactorizar.
+La convivencia es un modelo muy malo en cuanto al desarrollo de software ya dificulta la posibilidad de refactorizar.
 
-Como se ha mencionado previamente, JavaScript no tiene interfaces asi que las abstracciones
+Como se ha mencionado previamente, JavaScript no tiene interfaces así que las abstracciones
 de las que se dependen son contratos implícitos. Es decir, los métodos y las propiedades 
 que un objeto/clase expone hasta otro objeto/clase. En el ejemplo más abajo, el contrato implícito es que cualquier módulo de Request que utilizar el `InventoryTracker` debe tener 
-un metodo de `requestItems`.
+un método de `requestItems`.
 
 
 **Mal hecho:**
@@ -1750,14 +1750,14 @@ async function getCleanCodeArticle() {
 
 
 ## **Resolver los errores**
-Los errores que emergen en tus programas son buenos! Significan que tu ejecución ha tenido 
+¡Los errores que emergen en tus programas son buenos! Significan que tu ejecución ha tenido 
 éxito a la hora de identificar un error en tu programa y te avisa con 
 detener la ejecución del 'stack' actual, matando el proceso (en Node),
 y notificarse en el 'console' con un reporte de 'stack trace'
 
 ### No les ignores a los errores pillados
 Hacer nada cuando existe un error pillado no te da la habilidad de arreglar o resolverlo.
-Apuntar el error al console (`console.log`) no es mucho mejor ya que muchas veces se puede perder en un mar de cosas que se apuntan al console. Si metes tu código en un `try/catch` significa que un error puede ocurrir alli y asi que deberias de tener un plan, o crear una solución por si acaso.
+Apuntar el error al console (`console.log`) no es mucho mejor ya que muchas veces se puede perder en un mar de cosas que se apuntan al console. Si metes tu código en un `try/catch` significa que un error puede ocurrir allí y así que deberías de tener un plan, o crear una solución por si acaso.
 
 
 **Mal hecho:**
@@ -1822,11 +1822,11 @@ getdata()
 Formatear es subjetivo. Como muchas reglas en esta guía, no hay que seguirlas
 100%. El punto clave es: NO DISCUTAS sobre formatear. 
 Hay muchas [herramientas](http://standardjs.com/rules.html) para facilitar esto.
-Utiliza una de estas herramientas! Te desperdicias de tu propio tiempo y el tiempo de los demás cuando 
+¡Utiliza una de estas herramientas! Te desperdicias de tu propio tiempo y el tiempo de los demás cuando 
 discuten sobre formatear.
 
 Para las cosas que no tienen relevancia al formateo automático (indentación, tabulos y espacios,
-quotaciones de doble vs single, etc.), busca aquí para aconsejarte.
+comillas dobles y sencillas, etc.), busca aquí para aconsejarte.
 
 ### Utiliza capitalización consistente
 JavaScript es un idioma no tecleado, así que la capitalización puede decirte muchas cosas sobre tus variables, funciones, etc. Estas reglas son subjetivas, así que tu equipo puede escoger lo que quiera. El punto es, sin importar lo que escojas, se consistente.
@@ -1949,7 +1949,7 @@ review.perfReview();
 
 **[⬆ vuelve hasta arriba](#contenido)**
 
-## **Commentarios**
+## **Comentarios**
 ### Solamente comenta las cosas que tienen lógico complejo.
 Los comentarios existen para pedir perdón, pero no son un requisito. El código bueno más que nada se documenta sí mismo.
 
@@ -2010,7 +2010,7 @@ doStuff();
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### No escribas comentarios de jornada 
-Ojo: utiliza el control de versión (git)! No hay necesidad para el código no utilizado, 
+Ojo: ¡utiliza el control de versión (git)! No hay necesidad para el código no utilizado, 
 comentado, y especialmente comentarios de jornada. En cambio, utiliza 'git log' para 
 recuperar una historia de lo que has hecho.
 
@@ -2070,3 +2070,4 @@ const acciones = function() {
 };
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
+
