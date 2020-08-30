@@ -42,7 +42,7 @@ const fechaActual = moment().format('YYYY/MM/DD');
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Utiliza el vocabulario igual para los variables del mismo tipo 
+### Utiliza el vocabulario igual para las variables del mismo tipo 
 
 **Mal hecho:**
 ```javascript
@@ -59,19 +59,19 @@ conseguirUsuario();
 
 ### Utiliza nombres buscables 
 
-Nosotros leemos mucho más código que jamás escribiremos. Es importante que el código que escribimos sea legible y buscable. Cuando faltamos nombrar a los variables de manera buscable y legible, acabamos confundiendo a nuestros lectores. Echa un vistazo a las herramientas para ayudarte: [buddy.js](https://github.com/danielstjules/buddy.js) and
+Nosotros leemos mucho más código que jamás escribiremos. Es importante que el código que escribimos sea legible y buscable. Cuando faltamos nombrar a las variables de manera buscable y legible, acabamos confundiendo a nuestros lectores. Echa un vistazo a las herramientas para ayudarte: [buddy.js](https://github.com/danielstjules/buddy.js) y
 [ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md)
 
 **Mal hecho:**
 ```javascript
-// Para que rayos sirve 86400000? 
+// Para qué rayos sirve 86400000? 
 setTimeout(hastaLaInfinidadYMasAlla, 86400000);
 
 ```
 
 **Bien hecho:**
 ```javascript
-// Declaralos como variables globales de 'const'.
+// Decláralos como variables globales de 'const'.
 const MILISEGUNDOS_EN_UN_DIA = 8640000;
 
 setTimeout(hastaLaInfinidadYMasAlla, MILISEGUNDOS_EN_UN_DIA);
@@ -108,7 +108,7 @@ ubicaciones.forEach((u) => {
   // ...
   // ...
   // ...
-  // Espera, para que existe la 'u'?
+  // Espera, para qué existe la 'u'?
   ejecuta(u);
 });
 ```
@@ -118,7 +118,7 @@ ubicaciones.forEach((u) => {
 const ubicaciones = ['Austin', 'New York', 'San Francisco'];
 ubicaciones.forEach((ubicacion) => {
   hazUnaCosa();
-  hasMasCosas()
+  hazMasCosas()
   // ...
   // ...
   // ...
@@ -128,8 +128,8 @@ ubicaciones.forEach((ubicacion) => {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### No incluyas contexto innecesario  
-Si tu clase / nombre tu objeto te dice algo, no lo repitas 
-en el nombre de variable también. 
+Si el nombre de tu clase/objeto te dice algo, no lo repitas 
+de nuevo en el nombre de variable.
 
 **Mal hecho:**
 ```javascript
