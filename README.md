@@ -59,8 +59,8 @@ conseguirUsuario();
 
 ### Utiliza nombres buscables 
 
-Nosotros leemos mucho más código que jamás escribiremos. Es importante que el código que escribimos sea legible y buscable. Cuando faltamos nombrar a las variables de manera buscable y legible, acabamos confundiendo a nuestros lectores. Echa un vistazo a las herramientas para ayudarte: [buddy.js](https://github.com/danielstjules/buddy.js) y
-[ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md)
+Leemos mucho más código del que jamás escribiremos. Es importante que el código que escribimos sea legible y buscable. Si no nombramos las variables de manera buscable y legible, acabaremos confundiendo a nuestros lectores. Herramientas como [buddy.js](https://github.com/danielstjules/buddy.js) o
+[ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md) nos ayudarán a localizar constantes sin nombre.
 
 **Mal hecho:**
 ```javascript
@@ -71,7 +71,7 @@ setTimeout(hastaLaInfinidadYMasAlla, 86400000);
 
 **Bien hecho:**
 ```javascript
-// Decláralos como variables globales de 'const'.
+// Decláralos como constantes, con un nombre en mayúsculas.
 const MILISEGUNDOS_EN_UN_DIA = 8640000;
 
 setTimeout(hastaLaInfinidadYMasAlla, MILISEGUNDOS_EN_UN_DIA);
