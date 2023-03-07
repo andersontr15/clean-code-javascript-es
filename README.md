@@ -22,7 +22,7 @@ de cuantos expletivos que uno puede gritar al leer programas](http://www.osnews.
 
 Los principios de la ingeniería de software, del libro de Robert C. Martin [*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882), adaptado para JavaScript. Esta no es una guía de estilo, en cambio, es una guía para crear software que sea reutilizable, comprensible y que se pueda mejorar con el tiempo.
 
-No hay que seguir tan estrictamente todos los principios en este libro, y vale la pena mencionar que hacia muchos de ellos habrá controversia en cuanto al consentimiento. Estas son reflexiones hechas después de muchos años de experiencia colectiva de los autores de *Clean Code*.
+No hay que seguir tan estrictamente todos los principios en este libro, y vale la pena mencionar que hacía muchos de ellos habrá controversia en cuanto al consentimiento. Estas son reflexiones hechas después de muchos años de experiencia colectiva de los autores de *Clean Code*.
 
 Nuestra obra de ingeniería de software lleva poco más que 50 años como negocio, y aún estamos aprendiendo. Cuando la arquitectura de software llegue a ser tan vieja como la arquitectura en sí misma, quizás tengamos reglas más estrictas para seguir. Hasta entonces, dejemos que estas guías sirvan como ejemplo para medir la calidad del código en JavaScript que tú y tu equipo producen.
 
@@ -160,7 +160,7 @@ function pintarCoche(coche) {
 
 ### Utiliza argumentos predefinidos en vez de utilizar condicionales 
 Los argumentos predefinidos muchas veces son más organizados que utilizar los condicionales.
-Se consciente que si tú los usas, tu función sólo tendrá valores para los argumentos de `undefined`.
+Sé consciente que si tú los usas, tu función sólo tendrá valores para los argumentos de `undefined`.
 Los demás valores de 'falso' como `''`, `""`, `false`, `null`, `0`, y
 `NaN`, no se reemplazan con un valor predefinido.
 
@@ -185,7 +185,7 @@ function crearMicroCerveceria(nombreDelMicroCerveceria = 'Hipster Brew Co.') {
 ## **Funciones**
 ### Argumentos de funciones (2 o menos idealmente)
 
-Limitar la cantidad de parámetros de tus funciones es increíblemente importante ya que hace que tus pruebas del código sean más fáciles. Al pasar los 3 argumentos, llegarás a un escenario de una explosión combinatoria en que hay que comprobar con pruebas muchos casos únicos con un argumento separado.
+Limitar la cantidad de parámetros de tus funciones es increíblemente importante, ya que hace que tus pruebas del código sean más fáciles. Al pasar los 3 argumentos, llegarás a un escenario de una explosión combinatoria en que hay que comprobar con pruebas muchos casos únicos con un argumento separado.
 
 Uno o dos argumentos es la situación ideal, y más que eso uno debe evitar si es posible. Todo lo que se puede consolidar se debe consolidar. Normalmente, si tienes más que dos argumentos, tu función sirve para hacer demasiado. En otros casos, es mejor refactorizar y hacerlo un objeto para encapsular las funciones extras.
 
@@ -275,7 +275,7 @@ agregarMesAlDia(1, fecha);
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Las funciones deben tener solo un nivel de abstracción 
-Cuando tienes más que un nivel de abstracción tu función suele servir 
+Cuando tienes más que un nivel de abstracción, tu función suele servir 
 para hacer demasiado. Crear varias funciones más pequeñas se debe a mejor reutilización
 y comprobación más fácil. 
 
@@ -343,7 +343,7 @@ function parseBetterJSAlternative(code) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Eliminar el código duplicado 
-Haz tanto como puedas para evitar código duplicado. El código duplicado es malo ya que significa que hay varios lugares donde hay que actualizar algo si un cambio es necesario en tu lógico.
+Haz tanto como puedas para evitar código duplicado. El código duplicado es malo, ya que significa que hay varios lugares donde hay que actualizar algo si un cambio es necesario en tu lógico.
 
 Imagínate que estás en un restaurante y necesitas organizar tu inventario: todos tus tomates, cebolla, pimientos y tal. Si tienes varias listas donde organizas el inventario, cada lista se tendrá que actualizar en cuanto se baja tu inventario. En cambio, si logras tener una sola lista, solo se actualizará en un lugar a la hora de apuntar el inventario.
 
@@ -546,7 +546,7 @@ mandara sin querer la cosa que estaba agregada accidentalmente ya que tiene una
 referencia al array de 'shopping cart' que la función 'addItemToCart' modifico 
 con agregar una cosa no deseada.
 
-Una buena solución seria que la función 'addItemToCart' siempre copiara la 'carta',
+Una buena solución sería que la función 'addItemToCart' siempre copiara la 'carta',
 editarla, y devolvérsela a la copia. Esto asegura que ninguna otra función relacionada 
 se afectará por estos cambios.
 
@@ -555,7 +555,7 @@ Dos cosas para mencionar con esta solución:
   pero cuando adoptas esta práctica de programar, te darás cuentas de que estos casos son 
   bastante únicos.
   2. Copiar objetos grandes pueden ser muy caros en cuanto a la velocidad y calidad de tu programa.
-  Afortunadamente, no hay mucho problema con esto ya que existen muchas [recursos](https://facebook.github.io/immutable-js/)
+  Afortunadamente, no hay mucho problema con esto ya que existen muchos [recursos](https://facebook.github.io/immutable-js/)
   que nos dejan lograr el copiar de objetos y arrays sin perder actuación.
 
 
@@ -576,7 +576,7 @@ const addItemToCart = (cart, item) => {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### No intentes cambiar las funciones globales
-Polucionar las construcciones globales no es buen costumbre en JavaScript 
+Polucionar las construcciones globales no es buena costumbre en JavaScript 
 ya que se puede afrontar con otra biblioteca y el usuario de tu API no se daría 
 cuenta hasta que reciba una excepción cuando ya está en producción el código. Pensemos 
 en un ejemplo: que pasaría si quisieras extender los métodos nativos de la clase Array para 
@@ -768,7 +768,7 @@ class Cessna extends Airplane {
 JavaScript es un idioma no tecleado, por lo cual significa que tus funciones
 pueden aceptar cualquier tipo de argumento. A veces te aprovechas de esta libertad
 y tienes ganas de hacer comprobación de `tipos` dentro de tus funciones. Hay muchas 
-maneras de evitar tener que hacer esto. La primeras cosas para considerar son APIs
+maneras de evitar tener que hacer esto. Las primeras cosas para considerar son APIs
 consistentes.
 
 **Mal hecho:**
@@ -841,7 +841,7 @@ for (let i = 0; i < list.length; i++) {
 
 ### Eliminar el código muerto
 El código muerto es tan elegante como el código duplicado. No hay razón 
-para guardarlo. Si no se usa, ¡elimínalo! Aun estará en tu historia del control versión
+para guardarlo. Si no se usa, ¡elimínalo! Aún estará en tu historia del control versión
 si de verdad lo necesitas.
 
 
@@ -970,7 +970,7 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 
 ## **Clases**
 ### Prefiere ES2015/ES6 clases en vez de funciones normales de ES5
-Es muy difícil para obtener una herencia legible de las clases, las construcción y 
+Es muy difícil para obtener una herencia legible de las clases, las construcciones y 
 las definiciones de los métodos para las clases de ES5. Si necesitas la herencia (y puede que no la vayas a necesitar), entonces prefiere a las clases de ES2015/ES6. Sin embargo, prefiere funciones pequeñas hasta que necesites objetos más grandes y complejos.
 
 **Mal hecho:**
@@ -1047,7 +1047,7 @@ class Human extends Mammal {
 Este modelo es muy útil en JavaScript y puede que lo veas en muchas bibliotecas 
 como jQuery y Lodash. También permite que tu código sea expresivo y menos verboso.
 Por eso, digo, utiliza el encadenamiento de métodos y échale un vistazo a lo limpio 
-que llega a ser tu código. En tus funciones de clases, simplemente devuelve el `this` al final de cada función y asi puedes seguir encadenando los metodos de tu clase.
+que llega a ser tu código. En tus funciones de clases, simplemente devuelve el `this` al final de cada función y así puedes seguir encadenando los métodos de tu clase.
 
 **Mal hecho:**
 ```javascript
@@ -1337,7 +1337,7 @@ las propiedades deseables del programa (precisión, actuación, etc.). Esa si es
 
 La mejor explanación para este concepto es si tienes una clase `padre` y una clase `hijo`, 
 luego la clase base y la clase `hijo` se pueden intercambiar sin tener resultados que carecen de precisión. 
-Puede que aun estas confundido, así que miremos al modelo clásico de rectángulo-cuadro. 
+Puede que aún estás confundido, así que miremos al modelo clásico de rectángulo-cuadro. 
 Matemáticamente, un cuadro es un rectángulo, pero si lo modelas como una relación de "es-un" con la herencia, te meterás en problemas rápidamente.
 
 **Mal hecho:**
@@ -1452,7 +1452,7 @@ no implementan". Los interfaces son contratos implícitos en JavaScript debido a
 Un buen ejemplo que demuestra este principio en JavaScript es para las clases que 
 necesitan objetos grandes de composición. Con no requerir que los clientes se encarguen 
 de muchas opciones, puedes beneficiar ya que la mayoría del tiempo no hace falta todo lo extra. 
-Cuando haces que las opciones del contratos sean opcionales, evitas un "interfaz gordo".
+Cuando haces que las opciones del contrato sean opcionales, evitas un "interfaz gordo".
 
 
 **Mal hecho:**
@@ -1519,7 +1519,7 @@ const $ = new DOMTraverser({
 Este principio declara dos cosas esenciales:
 1. Los módulos de nivel alto no deben depender en los módulos de nivel bajo.
 Los dos deben dependerse en las abstracciones.
-2. Las abstracciones no deben dependerse en las detalles. Las detalles deben
+2. Las abstracciones no deben dependerse en los detalles. Los detalles deben
 dependerse en las abstracciones.
 
 Esto ha de entender la primera vez, pero si has trabajado con 
@@ -1609,7 +1609,7 @@ inventoryTracker.requestItems();
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ## **Pruebas**
-Comprobar nuestro código es más importante que enviarlo. Si no tienes pruebas o tienes una cantidad inadecuada, cada vez que envías tu código tendrás dudas en cuanto el saber de cuantos errores aún existen en tus programas. Deducir en lo que constituye una cantidad adecuada es la responsabilidad del equipo, pero tener cobertura 100% (todos las declaraciones y ramos) es como se logra una confianza alta y una tranquilidad de mente. Esto significa que encima de utilizar una estructura de pruebas, también necesitas usar una buena herramienta de cobertura.
+Comprobar nuestro código es más importante que enviarlo. Si no tienes pruebas o tienes una cantidad inadecuada, cada vez que envías tu código tendrás dudas en cuanto el saber de cuantos errores aún existen en tus programas. Deducir en lo que constituye una cantidad adecuada es la responsabilidad del equipo, pero tener cobertura 100% (todas las declaraciones y ramos) es como se logra una confianza alta y una tranquilidad de mente. Esto significa que encima de utilizar una estructura de pruebas, también necesitas usar una buena herramienta de cobertura.
 
 No existe excusa para no escribir pruebas. Hay muchas estructuras buenas de pruebas para JS, así que busca una que le guste tu equipo. Cuando encuentras una que tu equipo le gusta, enfócate en siempre escribir pruebas para cada nueva característica/módulo que introduces. Si tu método preferido es el Test Driven Development (TDD), eso está bien, pero el punto principal es que te aseguras de llegar a tus objetivos de cobertura antes de enviar el código o refactorizar una prueba ya existente.
 
@@ -1667,7 +1667,7 @@ describe('MakeMomentJSGreatAgain', () => {
 
 ## **Concurrencia**
 ### Utiliza las promesas y no utilices los callbacks
-Los callbacks no son limpos y utilizan una cantidad excesiva de encajamiento. Con ES2015/ES6, las Promesas son un tipo ya nativo del idioma. Utilizalas!
+Los callbacks no son limpios y utilizan una cantidad excesiva de encajamiento. Con ES2015/ES6, las Promesas son un tipo ya nativo del idioma. Utilizalas!
 
 **Mal hecho:**
 ```javascript
@@ -1711,7 +1711,7 @@ get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin')
 
 ### Async/Await son aún más limpios que las Promesas
 Las Promesas son una alternativa muy limpia a los callbacks, pero ES2017/E8 incluye 
-`async` y `await` que ofrecen una solución aún más limpia. Todo lo que necesitas es una función que empieza con la palabra `async`, y luego puedes escribir tu lógico imperativamente sin una fila de funciones de `then`. Utiliza esto si puedes aprovecharte de los beneficios de ES2017/E8 hoy!
+`async` y `await` que ofrecen una solución aún más limpia. Todo lo que necesitas es una función que empieza con la palabra `async`, y luego puedes escribir tu lógico imperativamente sin una fila de funciones de `then`. ¡Utiliza esto si puedes aprovecharte de los beneficios de ES2017/E8 hoy!
 
 **Mal hecho:**
 ```javascript
@@ -1825,11 +1825,11 @@ Hay muchas [herramientas](http://standardjs.com/rules.html) para facilitar esto.
 ¡Utiliza una de estas herramientas! Te desperdicias de tu propio tiempo y el tiempo de los demás cuando 
 discuten sobre formatear.
 
-Para las cosas que no tienen relevancia al formateo automático (indentación, tabulos y espacios,
+Para las cosas que no tienen relevancia al formateo automático (indentación, tabulaciones y espacios,
 comillas dobles y sencillas, etc.), busca aquí para aconsejarte.
 
 ### Utiliza capitalización consistente
-JavaScript es un idioma no tecleado, así que la capitalización puede decirte muchas cosas sobre tus variables, funciones, etc. Estas reglas son subjetivas, así que tu equipo puede escoger lo que quiera. El punto es, sin importar lo que escojas, se consistente.
+JavaScript es un idioma no tecleado, así que la capitalización puede decirte muchas cosas sobre tus variables, funciones, etc. Estas reglas son subjetivas, así que tu equipo puede escoger lo que quiera. El punto es, sin importar lo que escojas, sé consistente.
 
 
 **Mal hecho:**
