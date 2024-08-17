@@ -57,10 +57,9 @@ conseguirUsuario();
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Utiliza nombres buscables 
-
-Nosotros leemos mucho más código que jamás escribiremos. Es importante que el código que escribimos sea legible y buscable. Cuando faltamos nombrar a las variables de manera buscable y legible, acabamos confundiendo a nuestros lectores. Echa un vistazo a las herramientas para ayudarte: [buddy.js](https://github.com/danielstjules/buddy.js) y
-[ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md)
+### Utiliza nombres fáciles de buscar
+Leemos mucho más código del que escribimos, por lo que es crucial que el código que escribimos sea tanto legible como fácil de buscar. Si no asignamos nombres claros y fáciles de buscar a nuestras variables, podemos terminar confundiendo a quienes lean nuestro código. Para ayudarte en este proceso, considera utilizar herramientas como [buddy.js](https://github.com/danielstjules/buddy.js) y
+[ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md).
 
 **Mal hecho:**
 ```javascript
@@ -164,6 +163,8 @@ Se consciente que si tú los usas, tu función sólo tendrá valores para los ar
 Los demás valores de 'falso' como `''`, `""`, `false`, `null`, `0`, y
 `NaN`, no se reemplazan con un valor predefinido.
 
+Los argumentos predeterminados a menudo son más organizados que el uso de condicionales para establecer valores por defecto. Sin embargo, ten en cuenta que solo los argumentos con un valor de `undefined` serán reemplazados por el valor predeterminado. Otros valores "falsos" como `''`, `""`, `false`, `null`, `0`, y `NaN` no se sustituirán por el valor predeterminado.
+
 **Mal hecho:**
 ```javascript
 function crearMicroCerveceria(nombre) {
@@ -184,19 +185,17 @@ function crearMicroCerveceria(nombreDelMicroCerveceria = 'Hipster Brew Co.') {
 
 ## **Funciones**
 ### Argumentos de funciones (2 o menos idealmente)
+Limitar la cantidad de parámetros en tus funciones es crucial, ya que facilita la prueba y el mantenimiento del código. Cuando superas los tres argumentos, puedes encontrarte en una situación de "explosión combinatoria", donde debes probar múltiples combinaciones de parámetros, lo que aumenta la complejidad de las pruebas.
 
-Limitar la cantidad de parámetros de tus funciones es increíblemente importante ya que hace que tus pruebas del código sean más fáciles. Al pasar los 3 argumentos, llegarás a un escenario de una explosión combinatoria en que hay que comprobar con pruebas muchos casos únicos con un argumento separado.
+Lo ideal es mantener uno o dos argumentos por función; más de eso debería evitarse si es posible. Si tienes más de dos argumentos, probablemente tu función esté haciendo demasiado. En tales casos, es mejor refactorizar, consolidando los parámetros en un solo objeto que encapsule las funcionalidades adicionales.
 
-Uno o dos argumentos es la situación ideal, y más que eso uno debe evitar si es posible. Todo lo que se puede consolidar se debe consolidar. Normalmente, si tienes más que dos argumentos, tu función sirve para hacer demasiado. En otros casos, es mejor refactorizar y hacerlo un objeto para encapsular las funciones extras.
+Dado que JavaScript te permite crear objetos de forma flexible sin necesidad de clases, puedes agrupar varios argumentos en un objeto cuando sea necesario.
 
-Ya que JavaScript te deja crear objetos cuando quieras sin incorporar la arquitectura de 'clases', se puede usar un objeto si necesitas muchos argumentos.
+Para hacer más evidente qué argumentos espera la función, puedes usar la sintaxis de "destructuración" de ES2015/ES6. Esta sintaxis ofrece varias ventajas:
 
-Para hacerlo más obvio cuáles argumentos espera la función, se puede usar la sintaxis de ES2015/ES6: 'destructuración'. Esta sintaxis tiene varias ventajas:
-
-1. Cuando alguien se fija en el firme de la función, es inmediatamente claro cuáles argumentos se usan.
-2. Destructurar también copia los valores específicos y primitivos del objeto argumento que se le pasa a la función. Esto puede evitar los efectos extras. Ojo: objetos y arreglos que se destructuran del objeto argumento NO se copian.
-3. Los 'linters' te pueden avisar cuales argumentos / propiedades no se usan, lo cual sería imposible sin destructurar.
-
+- Cuando alguien revisa la definición de la función, es inmediatamente claro qué argumentos se utilizan.
+- La destructuración también copia los valores primitivos específicos del objeto argumento que se pasa a la función, lo que ayuda a evitar efectos secundarios no deseados. Nota: los objetos y arrays que se destructuran del objeto argumento **no** se copian.
+- Los linters pueden avisarte sobre los argumentos o propiedades no utilizados, lo que sería difícil de detectar sin la destructuración.
 
 **Mal hecho:**
 ```javascript
@@ -221,7 +220,7 @@ crearMenu({
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Las funciones deben tener una sola responsabilidad
-Esta regla por mucho es la más importante en la ingeniería de software. Cuando las funciones sirven para hacer más que una sola cosa, se dificultan las pruebas, la composición y el entender. Cuando puedes aislar una función hasta tener solo una acción, se pueden mejorar más fácil y tu código llegue a ser mucho más limpio. Si solamente entiendes una cosa de esta guía, entiende esta regla y estarás adelantado de muchos desarrolladores.
+Esta es, sin duda, la regla más importante en la ingeniería de software. Cuando las funciones realizan más de una tarea, se vuelven más difíciles de probar, componer y entender. Al aislar cada función para que haga solo una cosa, facilitas su mejora y haces que tu código sea mucho más limpio y mantenible. Si solo te llevas una lección de esta guía, que sea esta: dominar esta regla te pondrá por delante de muchos desarrolladores.
 
 **Mal hecho:**
 ```javascript
@@ -275,9 +274,7 @@ agregarMesAlDia(1, fecha);
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Las funciones deben tener solo un nivel de abstracción 
-Cuando tienes más que un nivel de abstracción tu función suele servir 
-para hacer demasiado. Crear varias funciones más pequeñas se debe a mejor reutilización
-y comprobación más fácil. 
+Cuando una función opera en más de un nivel de abstracción, es probable que esté haciendo demasiado. Dividirla en varias funciones más pequeñas no solo mejora la reutilización del código, sino que también facilita las pruebas y la comprensión del mismo. 
 
 **Mal hecho:**
 ```javascript
@@ -343,14 +340,13 @@ function parseBetterJSAlternative(code) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Eliminar el código duplicado 
-Haz tanto como puedas para evitar código duplicado. El código duplicado es malo ya que significa que hay varios lugares donde hay que actualizar algo si un cambio es necesario en tu lógico.
+Haz todo lo posible para evitar el código duplicado. El código duplicado es problemático porque significa que hay múltiples lugares donde deberás hacer actualizaciones si es necesario cambiar algo en tu lógica.
 
-Imagínate que estás en un restaurante y necesitas organizar tu inventario: todos tus tomates, cebolla, pimientos y tal. Si tienes varias listas donde organizas el inventario, cada lista se tendrá que actualizar en cuanto se baja tu inventario. En cambio, si logras tener una sola lista, solo se actualizará en un lugar a la hora de apuntar el inventario.
+Imagina que estás en un restaurante y necesitas organizar tu inventario: todos tus tomates, cebollas, pimientos, etc. Si mantienes varias listas para organizar el inventario, cada vez que disminuya tu inventario, tendrás que actualizar todas las listas. En cambio, si tienes una sola lista, solo necesitarás actualizar un lugar al registrar los cambios en el inventario.
 
-Muchas veces tienes código duplicado se debe al hecho de tener dos o más cosas semejantes. Estos archivos pueden comparten varias cosas, pero sus diferencias te obligan separarlos para tener dos o más funciones que hacen cosas muy similares. Remover el código duplicado significa que se puede hacer la misma cosa que un solo función/módulo/clase.
+El código duplicado a menudo surge cuando tienes dos o más elementos similares. Estos elementos pueden compartir muchas cosas, pero sus diferencias te llevan a separarlos, creando dos o más funciones que hacen cosas muy parecidas. Eliminar el código duplicado significa que puedes realizar la misma tarea con una sola función, módulo o clase.
 
-Obtener la abstracción correcta es crítica y por eso debes de adherir a los principios de SOLID que se explican en la sección de Clases. Las malas abstracciones pueden ser aún peores que el código duplicado, ¡así que ten cuidado! Es decir, si puedes hacer una buena abstracción, ¡hazla! No te repitas, si no te darás cuenta de que andas actualizando mucho código en varios lugares a la hora de implementar un cambio.
-
+Lograr la abstracción correcta es crucial, y para ello, es importante seguir los principios de SOLID, que se explican en la sección de Clases. Las malas abstracciones pueden ser aún peores que el código duplicado, ¡así que ten cuidado! En resumen, si puedes crear una buena abstracción, hazlo. No te repitas, de lo contrario, terminarás actualizando mucho código en múltiples lugares cada vez que implementes un cambio.
 
 **Mal hecho:**
 ```javascript
@@ -455,10 +451,8 @@ createMenu(menuConfig);
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### No utilices 'marcadores' como parámetros de las funciones
-Los marcadores existen para decirle a tu usuario que esta función hace más que una sola cosa. 
-Como se ha mencionado antes las funciones deben hacer una sola cosa. 
-Divide tus funciones en varias funciones más pequeñas si se adhieren a distintos métodos basados en un booleano. 
+### No utilices 'banderas' como parámetros de las funciones
+Las "banderas" en los parámetros indican que una función está realizando más de una tarea. Como se ha mencionado anteriormente, las funciones deben hacer solo una cosa. Si una función sigue diferentes caminos lógicos según un valor booleano, divídela en funciones más pequeñas que se enfoquen en tareas específicas.
 
 **Mal hecho:**
 ```javascript
@@ -483,36 +477,26 @@ function createTempFile(name) {
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Evitar que las funciones produzcan efectos extras (parte 1)
-Una función produce un efecto extra si hace cualquier cosa más que solo tomar 
-un valor y volverlo/los). Un efecto extra podría ser escribir a un archivo, 
-modificar un variable global, o accidentalmente enviar todo tu dinero a un 
-desconfiado. 
+### Evita que las funciones produzcan efectos secundarios (Parte 1)
+Una función produce un efecto secundario cuando hace algo más que simplemente tomar un valor y devolverlo. Los efectos secundarios pueden incluir escribir en un archivo, modificar una variable global o, en el peor de los casos, transferir accidentalmente todo tu dinero a una fuente no confiable.
 
-Bueno, las funciones necesitan tener efectos extras a menudo. Como el ejemplo anterior, 
-puede que sea necesario escribir hasta un archivo. En ese caso, hay que centralizar en el 'por qué' 
-de lo que estás haciendo. No tengas varias funciones y clases que escriben hasta un archivo particular. 
-En cambio, crea un 'servicio' que se dedica a eso: uno y solo un servicio.
+Sin embargo, es cierto que a veces las funciones necesitan producir efectos secundarios, como en el caso de escribir en un archivo. En estos casos, es importante centralizar la responsabilidad de estos efectos. No debes tener múltiples funciones o clases que escriban en un archivo específico; en su lugar, crea un único servicio dedicado a esa tarea.
 
-El punto clave aquí es evitar las equivocaciones comunes como compartir 'estado' entre 
-objeto sin ninguna estructura, utilizar tipos de data mutables que se pueden escribir hasta 
-lo que sea, y no centralizar donde se ocurren los efectos extras. Si puedes conseguir esto, 
-serás más feliz que la mayoría de los demás programadores.
-
+El punto clave aquí es evitar errores comunes, como compartir estado entre objetos sin una estructura clara, usar tipos de datos mutables que pueden ser modificados accidentalmente, y no centralizar dónde ocurren los efectos secundarios. Si logras esto, serás un programador más eficiente y feliz que muchos otros.
 
 **Mal hecho:**
 ```javascript
-// Global variable referenced by following function.
-// If we had another function that used this name, now it'd be an array and it could break it.
-let name = 'Ryan McDermott';
+// Variable global referenciada por la siguiente función.
+// Si tuviéramos otra función que usara este nombre, ahora sería un array y podría romper su funcionamiento.
+let nombre = 'Ryan McDermott';
 
-function splitIntoFirstAndLastName() {
-  name = name.split(' ');
+function dividirEnNombreYApellido() {
+  nombre = nombre.split(' ');
 }
 
-splitIntoFirstAndLastName();
+dividirEnNombreYApellido();
 
-console.log(name); // ['Ryan', 'McDermott'];
+console.log(nombre); // ['Ryan', 'McDermott'];
 ```
 
 **Bien hecho:**
@@ -529,35 +513,18 @@ console.log(newName); // ['Ryan', 'McDermott'];
 ```
 **[⬆ vuelve hasta arriba](#contenido)**
 
-### Evitar los efectos extras(parte 2)
-En JavaScript, los primitivos se pasan por valores y los objetos/arrays se
-pasan por referencia. En el caso de los objetos y los array, si tu función 
-hace un cambio en la shopping cart array, por ejemplo, con agregar una cosa a 
-la hora de comprar, resulta que todas las demás funciones que utilizan este array 
-estarán afectadas. Esto puede ser bueno o malo. Imaginemos una situación mala:
+### Evita los efectos secundarios (Parte 2)
+En JavaScript, los tipos primitivos se pasan por valor, mientras que los objetos y arrays se pasan por referencia. Esto significa que cuando una función modifica un objeto o array, como un carrito de compras al agregar un artículo, todas las demás funciones que utilizan ese mismo array se verán afectadas por el cambio. Esta característica puede ser tanto beneficiosa como perjudicial, dependiendo del contexto. Veamos un ejemplo en el que esto podría ser problemático:
 
-El usuario le da click a "Comprar", un botón que invoca la función de "comprar".
-Esta función hace una solicitud del red y envía el array de 'cart' hasta el servidor.
-Debido a la conexión mala del red, la función sigue intentando invocarse para mandar 
-la solicitud. Ahora, que pasa mientras tanto cuando el usuario le da click otra vez 
-al botón en una cosa que no querían antes de que empezase la solicitud del red? 
-Bueno, si pasa eso y comienza la solicitud del red, la función de 'comprar' 
-mandara sin querer la cosa que estaba agregada accidentalmente ya que tiene una 
-referencia al array de 'shopping cart' que la función 'addItemToCart' modifico 
-con agregar una cosa no deseada.
+Supongamos que un usuario hace clic en el botón "Comprar", lo que invoca la función `comprar()`. Esta función envía el contenido del carrito de compras (`cart`) al servidor mediante una solicitud de red. Debido a una conexión lenta, la solicitud puede tardar en completarse, lo que lleva a la función `comprar()` a intentar repetidamente enviar el array `cart` al servidor. Ahora, ¿qué ocurre si, mientras tanto, el usuario agrega accidentalmente otro artículo al carrito antes de que la solicitud inicial se complete? En ese caso, la función `comprar()` enviará involuntariamente el artículo no deseado, ya que tiene una referencia al array `shopping cart` que la función `addItemToCart` ha modificado.
 
-Una buena solución seria que la función 'addItemToCart' siempre copiara la 'carta',
-editarla, y devolvérsela a la copia. Esto asegura que ninguna otra función relacionada 
-se afectará por estos cambios.
+Una solución efectiva a este problema es hacer que la función `addItemToCart` siempre trabaje con una copia del carrito, en lugar de modificar el original. Es decir, la función debería copiar el array `cart`, realizar las modificaciones necesarias en la copia y luego devolver el nuevo array modificado. Esto garantiza que ninguna otra función que esté utilizando el carrito original se verá afectada por cambios inesperados.
 
-Dos cosas para mencionar con esta solución:
-  1. Puede que existan escenarios donde de verdad quieres modificar el objeto de input, 
-  pero cuando adoptas esta práctica de programar, te darás cuentas de que estos casos son 
-  bastante únicos.
-  2. Copiar objetos grandes pueden ser muy caros en cuanto a la velocidad y calidad de tu programa.
-  Afortunadamente, no hay mucho problema con esto ya que existen muchas [recursos](https://facebook.github.io/immutable-js/)
-  que nos dejan lograr el copiar de objetos y arrays sin perder actuación.
+Hay dos puntos importantes a considerar con esta solución:
 
+1. **Modificar el objeto de entrada:** Puede haber situaciones en las que realmente necesites modificar el objeto de entrada. Sin embargo, al adoptar esta práctica, te darás cuenta de que estos casos son bastante raros.
+
+2. **Costo de rendimiento al copiar objetos:** Copiar objetos grandes puede tener un impacto en el rendimiento de tu aplicación. Afortunadamente, existen muchas [técnicas y herramientas](https://facebook.github.io/immutable-js/) que permiten realizar copias de objetos y arrays de manera eficiente, minimizando el impacto en el rendimiento.
 
 **Mal hecho:**
 ```javascript
@@ -576,15 +543,9 @@ const addItemToCart = (cart, item) => {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### No intentes cambiar las funciones globales
-Polucionar las construcciones globales no es buen costumbre en JavaScript 
-ya que se puede afrontar con otra biblioteca y el usuario de tu API no se daría 
-cuenta hasta que reciba una excepción cuando ya está en producción el código. Pensemos 
-en un ejemplo: que pasaría si quisieras extender los métodos nativos de la clase Array para 
-tener un método de 'diff' en que se podría mostrar la diferencia entre dos arrays?
-Podrías escribir una nueva función hasta el prototipo del `Array.prototype`, pero eso
-también podría causar problemas con otra biblioteca que contenía el método igual. 
-Bueno, ¿qué pasaría si la otra biblioteca solamente usaba ‘diff’ para averiguar la diferencia entre el primer elemento y el último elemento del array? Por eso hay que utilizar las clases de ES2015/ES6 y extender el global de `Array`. 
+Contaminar el "espacio global" no es una buena práctica en JavaScript, ya que puede generar conflictos con otras librerías y el usuario de tu API no se daría cuenta hasta que reciba una excepción en producción. Pensemos en un ejemplo: ¿qué pasaría si quisieras extender los métodos nativos de la clase `Array` para tener un método `diff` que muestre la diferencia entre dos arrays?
 
+Podrías añadir esta función al prototipo de `Array.prototype`, pero eso podría causar problemas si otra biblioteca ya contiene un método con el mismo nombre. ¿Qué sucedería si la otra biblioteca usa `diff` para calcular la diferencia entre el primer y el último elemento de un array? Por este motivo, es mejor evitar modificar las construcciones globales y, en su lugar, utilizar las clases de ES2015/ES6 para extender `Array` de manera segura.
 
 **Mal hecho:**
 ```javascript
@@ -606,10 +567,7 @@ class SuperArray extends Array {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Favorece a la programación funcional en vez de la programación imperativa
-JavaScript no es un idioma funcional tal como es Haskell, pero tiene su propio 
-sabor funcional. Los idiomas funcionales son más limpios y fáciles de comprobar.
-Favorece este estilo de programar cuando puedes.
-
+JavaScript no es un lenguaje puramente funcional como Haskell, pero tiene su propio enfoque funcional. Los lenguajes funcionales suelen ser más limpios y más fáciles de depurar. Siempre que sea posible, favorece este estilo de programación.
 
 **Mal hecho:**
 ```javascript
@@ -709,14 +667,7 @@ if (isDOMNodePresent(node)) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Evitar los condicionales
-Esto parece ser un reto imposible. Al escuchar esto por primera vez, 
-la mayoría de la gente dirá: "como se supone que hago sin una declaración de 'if'?"
-Bueno, la respuesta es que puedes utilizar  para lograr los 
-mismos retos en muchos escenarios. La segunda pregunta suele ser: "bueno, eso está bien, pero por qué voy a querer hacer eso?" La respuesta yace en un concepto anterior que ya hemos 
-aprendido: una función solo debe hacer una sola cosa. Cuando tienes clases y funciones 
-que contienen declaraciones de `if`, le dices al usuario que tu función hace más que una sola 
-cosa. Recuerda, solo haz una cosa.
-
+Esto puede parecer un desafío imposible. Al escuchar esta idea por primera vez, la mayoría de las personas se preguntan: "¿Cómo se supone que debo programar sin usar una declaración `if`?" La respuesta es que existen otras maneras de abordar la mayoría de los escenarios sin necesidad de un `if`. La siguiente pregunta que surge suele ser: "Está bien, pero ¿por qué debería querer hacer eso?" La respuesta se encuentra en un concepto que ya hemos aprendido: una función debería hacer solo una cosa. Cuando tienes clases y funciones que contienen declaraciones `if`, estás indicando al usuario que tu función realiza más de una tarea. Recuerda, haz solo una cosa.
 
 **Mal hecho:**
 ```javascript
@@ -765,11 +716,7 @@ class Cessna extends Airplane {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Evitar la comprobación de tipos (parte 1)
-JavaScript es un idioma no tecleado, por lo cual significa que tus funciones
-pueden aceptar cualquier tipo de argumento. A veces te aprovechas de esta libertad
-y tienes ganas de hacer comprobación de `tipos` dentro de tus funciones. Hay muchas 
-maneras de evitar tener que hacer esto. La primeras cosas para considerar son APIs
-consistentes.
+JavaScript es un lenguaje de tipado dinámico, lo que significa que tus funciones pueden aceptar argumentos de cualquier tipo. A veces, puede ser tentador aprovechar esta flexibilidad para realizar comprobaciones de tipos dentro de tus funciones. Sin embargo, existen muchas maneras de evitar esto. Una de las primeras cosas a considerar es diseñar APIs consistentes.
 
 **Mal hecho:**
 ```javascript
@@ -791,10 +738,7 @@ function travelToTexas(vehicle) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### Evitar la comprobación de tipos (parte 2)
-Si estás trabajando con los valores primitivos básicos como `strings`, enteros y arrays y que no puedes utilizar polimorfismo, pero existe la necesidad de comprobar los `tipos`, debes
-considerar utilizando TypeScript. Es un alternativo excelente a JavaScript, y te provee con los tipos estáticos encima del sintaxis estándar de JavaScript. El problema con comprobar los tipos en JavaScript es que para hacerlo bien resulta en mucho más verbos que no vale la pena al lado de la legibilidad disminuida que viene a junto con esta solución. Intenta mantener limpio tu código de JavaScript, escribe buenas pruebas, y haz buenas revisiones de código.
-Eso dicho, haz todo lo de arriba, pero con TypeScript (por lo cual, como dije, es buen alternativo).
-
+Si estás trabajando con valores primitivos como `strings`, enteros o arrays y no puedes utilizar polimorfismo, pero necesitas realizar comprobaciones de tipos, deberías considerar el uso de TypeScript. Es una excelente alternativa a JavaScript, ya que proporciona tipos estáticos sobre la sintaxis estándar de JavaScript. El problema de realizar comprobaciones de tipos en JavaScript es que hacerlo correctamente puede hacer que el código sea mucho más extenso y verboso, lo que afecta negativamente la legibilidad. En lugar de complicar tu código con estas verificaciones, mantén tu código JavaScript limpio, escribe buenas pruebas y realiza revisiones de código rigurosas.
 
 **Mal hecho:**
 ```javascript
@@ -817,15 +761,12 @@ function combine(val1, val2) {
 **[⬆ vuelve hasta arriba](#contenido)**
 
 ### No optimices demasiado
-Los navegadores modernos hacen mucha optimización en el fondo a la hora de ejecutar.
-Muchas veces, malgastas tu tiempo si optimizas. [Hay buenos recursos para esto](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers) para ver donde carece de optimizar tu código. Enfócate en esos huecos donde puedes optimizar, hasta que se puedan 
-arreglar si es posible.
+Los navegadores modernos realizan muchas optimizaciones de manera automática durante la ejecución del código. A menudo, optimizar prematuramente puede ser una pérdida de tiempo. [Existen buenos recursos](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers) que te ayudan a identificar áreas donde tu código podría necesitar optimización. Enfócate en esas áreas específicas donde realmente se puede mejorar, y optimiza solo cuando sea necesario.
 
 **Mal hecho:**
 ```javascript
-
-// On old browsers, each iteration with uncached `list.length` would be costly
-// because of `list.length` recomputation. In modern browsers, this is optimized.
+// En navegadores antiguos, cada iteración sin almacenar `list.length` en una variable
+// sería costosa debido a que `list.length` se recalcula en cada iteración. En navegadores modernos, esto está optimizado.
 for (let i = 0, len = list.length; i < len; i++) {
   // ...
 }
@@ -873,18 +814,13 @@ inventoryTracker('apples', req, 'www.inventory-awesome.io');
 
 ## **Objetos y estructuras de data**
 ### Utiliza getters y setters
-Utilizar los getters y setters para acceder data dentro de los objetos 
-puede ser mejor que simplemente buscar una propiedad. "Por qué?" Bueno, aquí 
-te dejo con una lista desorganizada de las razones: 
+Usar getters y setters para acceder a los datos dentro de los objetos puede ser mejor que acceder directamente a las propiedades. ¿Por qué? Aquí te dejo algunas razones:
 
-* Cuando quieres hacer algo más allá de acceder una propiedad de objeto, no tienes 
-qué buscar todos los accesorios en tu programa.
-* Hace que implementar validación sea más fácil cuando construyes un `set`
-* Encapsula la representación internal
-* Facilita la incorporación de apuntar errores de acceder y crear
-* Puedes cargar de manera vaga las propiedades del objeto, digamos de un servidor
-por ejemplo
-
+- Permite realizar tareas adicionales al acceder o modificar una propiedad, sin necesidad de cambiar todo tu código.
+- Facilita la implementación de validaciones al establecer valores mediante un setter.
+- Encapsula la representación interna de los datos, protegiendo su integridad.
+- Facilita la captura y gestión de errores al acceder o modificar propiedades.
+- Permite la carga diferida de propiedades, por ejemplo, desde un servidor.
 
 **Mal hecho:**
 ```javascript
